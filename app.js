@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/nodetest1');
+var db = monk('localhost:27017/paperLessDB');
 
 var homeRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
