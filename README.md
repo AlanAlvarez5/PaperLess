@@ -5,3 +5,4 @@ Contributors:
 _______________________
 - Diego Eduardo Rosas González
 - Jose Abel Vilchis Mar
+- Alan Antonio Alvarez Sánchez
