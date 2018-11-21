@@ -6,3 +6,6 @@ _______________________
 - Diego Eduardo Rosas González
 - Jose Abel Vilchis Mar
 - Alan Antonio Alvarez Sánchez
+- Jonathan Joel Corona Ortega
+- Luis Enrique Salgado Tenorio
+- Christian Josué Acosta Vargas
