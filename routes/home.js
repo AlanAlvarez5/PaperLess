@@ -25,4 +25,34 @@ router.get('/explore', function(req, res) {
   });
 });
 
+router.post('/addcall', function(req, res) {
+
+  // Set our internal DB variable
+  var db = req.db;
+
+  // Get our form values. These rely on the "name" attributes
+  var coltitle = req.body.title;
+  var institution = req.body.institution;
+  var limitdate = req.body.limited_date;
+
+  // Set our collection
+  var collection = db.get('calls');
+
+  // Submit to the DB
+  collection.insert({
+      "title" : coltitle,
+      "institution" : institution,
+      "limited_date" : limitdate
+  }, function (err, doc) {
+      if (err) {
+          // If it failed, return error
+          res.send("There was a problem adding the information to the database.");
+      }
+      else {
+          // And forward to success page
+          res.redirect("explore");
+      }
+  });
+});
+
 module.exports = router;

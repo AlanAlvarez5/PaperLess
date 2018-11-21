@@ -2,7 +2,8 @@ extends layout
 
 block content
   h1 Explore 
-  p Aquí se muestran las convocatorias jeje
+  p Esta es la lista de convocatorias existentes.
+  a(href="http://localhost:3000/addcall") Agregar Convocatoria
   each call, i in calls
     h1 #{call.title}
     p #{call.institution}

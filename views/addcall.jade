@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Llena los campos para agregar tu nueva convocatoria
+  form#formAddCol(name="addcall",method="post",action="/addcall")
+    p Título
+    input#inputTitle(type="text", placeholder="Ej. Movilidad", name="title")
+    p Institución
+    input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution")
+    p Fecha límite
+    input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date")
+    button#btnSubmit(type="submit") Aceptar
+  a(href="http://localhost:3000/explore") Cancelar
