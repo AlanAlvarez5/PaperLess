@@ -1,9 +1,13 @@
-extends layout
-
-block content
-  h1 Explore 
-  p Esta es la lista de convocatorias existentes.
-  a(href="http://localhost:3000/addcall") Agregar Convocatoria
-  each call, i in calls
-    h1 #{call.title}
-    p #{call.institution}
+doctype html
+html
+    head
+      style
+        include /Users/alan/Desktop/PaperLess/PaperLess/public/stylesheets/exploreStyle.css
+      title Explore
+    body
+    h1 Explore 
+    p Esta es la lista de convocatorias existentes.
+    a(href="http://localhost:3000/addcall") Agregar Convocatoria
+    each call, i in calls
+      h1 #{call.title}
+      p #{call.institution}
