@@ -9,4 +9,3 @@ _______________________
 - Jonathan Joel Corona Ortega
 - Luis Enrique Salgado Tenorio
 - Christian Josué Acosta Vargas
-- Venus
