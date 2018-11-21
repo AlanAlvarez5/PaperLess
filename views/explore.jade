@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Aquí podrás encontrar convocatorias. Para ver los detalles inicia sesión.
+  h1 Explore 
+  p Aquí se muestran las convocatorias jeje
+  each call, i in calls 
+   #{call.title}

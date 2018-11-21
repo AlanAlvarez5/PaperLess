@@ -14,8 +14,15 @@ router.get('/addcall', function(req, res){
   res.render('addcall', {title:'Crea una nueva convocatoria'});
 });
 
-router.get('/explore', function(req, res){
-  res.render('explore', {title:'Explorar'});
+
+router.get('/explore', function(req, res) {
+  var db = req.db;
+  var collection = db.get('calls');
+  collection.find({},{},function(e,docs){
+      res.render('explore', {
+          "calls" : docs 
+      });
+  });
 });
 
 module.exports = router;
