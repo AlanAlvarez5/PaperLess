@@ -35,7 +35,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-data/diagnostic.data/metrics
+data/
 
 # TypeScript v1 declaration files
 typings/
