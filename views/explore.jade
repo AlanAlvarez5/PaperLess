@@ -9,6 +9,7 @@ html
     p Esta es la lista de convocatorias existentes.
     a(href="http://localhost:3000/addcall") Agregar Convocatoria
     each call, i in calls 
-      h1 #{call.title}
-      p #{call.institution}
-      p #{call.description}
+      #call
+        h3 #{call.title}
+        p #{call.institution}
+        p límite: #{call.limited_date}
