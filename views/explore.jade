@@ -5,11 +5,14 @@ html
       title Explore
     body
     #header
+      img(src="/images/logo.png")
       h1 Explore 
     p Esta es la lista de convocatorias existentes.
     a(href="http://localhost:3000/addcall") Agregar Convocatoria
-    each call, i in calls 
-      #call
-        h3 #{call.title}
-        p #{call.institution}
-        p límite: #{call.limited_date}
+    
+    #callcontainer
+      each call, i in calls 
+        #call
+          h3 #{call.title}
+          p #{call.institution}
+          p límite: #{call.limited_date}
