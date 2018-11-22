@@ -34,6 +34,7 @@ router.post('/addcall', function(req, res) {
   var coltitle = req.body.title;
   var institution = req.body.institution;
   var limitdate = req.body.limited_date;
+  var description = req.body.description;
 
   // Set our collection
   var collection = db.get('calls');
@@ -42,7 +43,8 @@ router.post('/addcall', function(req, res) {
   collection.insert({
       "title" : coltitle,
       "institution" : institution,
-      "limited_date" : limitdate
+      "limited_date" : limitdate,
+      "description" : description
   }, function (err, doc) {
       if (err) {
           // If it failed, return error
