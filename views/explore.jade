@@ -1,13 +1,14 @@
 doctype html
 html
     head
-      style
-        include /Users/alan/Desktop/PaperLess/PaperLess/public/stylesheets/exploreStyle.css
+      link(href='/stylesheets/exploreStyle.css', rel='stylesheet')
       title Explore
     body
-    h1 Explore 
+    #header
+      h1 Explore 
     p Esta es la lista de convocatorias existentes.
     a(href="http://localhost:3000/addcall") Agregar Convocatoria
-    each call, i in calls
+    each call, i in calls 
       h1 #{call.title}
       p #{call.institution}
+      p #{call.description}
