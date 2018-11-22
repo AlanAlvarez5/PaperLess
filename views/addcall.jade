@@ -6,24 +6,28 @@ html
     body
     #header
       h1= title
-    p Ingresa las características de la nueva convocatoria
+    #Intructions
+      p Ingresa las características de la nueva convocatoria
 
     #fill
       form#formAddCol(name="addcall",method="post",action="/addcall")
-        p Título
+        
         #title
+          p Título
           input#inputTitle(type="text", placeholder="Ej. Movilidad", name="title")
-        p Institución
+        
         #institution
+          p Institución
           input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution")
-        p Fecha límite
+        
         #date
+          p Fecha límite
           input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date")
-        p Descripción
+        
         #description
-          input#inputDescription(type="text", placeholder="D", name="description")
+          p Descripción
+          input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description")
         #submit
           button#btnSubmit(type="submit") Aceptar
-      a(href="http://localhost:3000/explore") Cancelar
+          a(href="http://localhost:3000/explore") Cancelar
 
-      
