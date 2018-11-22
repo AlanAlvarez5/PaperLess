@@ -1,15 +1,29 @@
-extends layout
+doctype html
+html
+    head
+      link(href='/stylesheets/addcall.css', rel='stylesheet')
+      title Nueva Convocatoria
+    body
+    #header
+      h1= title
+    p Ingresa las características de la nueva convocatoria
 
-block content
-  h1= title
-  form#formAddCol(name="addcall",method="post",action="/addcall")
-    p Título
-    input#inputTitle(type="text", placeholder="Ej. Movilidad", name="title")
-    p Institución
-    input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution")
-    p Fecha límite
-    input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date")
-    p Descripción
-    input#inputInstitution(type="text", placeholder="D", name="description")
-    button#btnSubmit(type="submit") Aceptar
-  a(href="http://localhost:3000/explore") Cancelar
+    #fill
+      form#formAddCol(name="addcall",method="post",action="/addcall")
+        p Título
+        #title
+          input#inputTitle(type="text", placeholder="Ej. Movilidad", name="title")
+        p Institución
+        #institution
+          input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution")
+        p Fecha límite
+        #date
+          input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date")
+        p Descripción
+        #description
+          input#inputDescription(type="text", placeholder="D", name="description")
+        #submit
+          button#btnSubmit(type="submit") Aceptar
+      a(href="http://localhost:3000/explore") Cancelar
+
+      
