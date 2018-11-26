@@ -1,5 +1,47 @@
-extends layout
+doctype html
+html
+    head
+      link(href='/stylesheets/adduser.css', rel='stylesheet')
+      title Nueva Usuario
+    body
 
-block content
-  h1= title
-  p Ingresa los datos del usuario
+      
+    #header
+      h1= title
+
+    #instructions
+      h1 Ingresa tus datos
+    #fill
+      
+      form#formData(name="adduser",method="post",action="/adduser")
+        #name
+          p Nombre
+          input#inputName(type="text", placeholder="Antonio", name="name")
+        #lastname
+          p Apellido
+          input#inputLastname(type="text", placeholder="Alvarez", name="lastname")
+        #username
+          p Username
+          input#inputUsername(type="text", placeholder="antonio98", name="username")
+        #email
+          p E-mail
+          input#inputemail(type="mail",  placeholder="ejemplo@mail.com", name="email")
+        #password
+          p Contraseña
+          input#inputPassword(type="password",  placeholder="Nueva contraseña", name="password")
+          p Confirmar contraseña
+          input#inputRepeatPassword(type="password",  placeholder="Confirmar contraseña", name="repeatpassword")
+        #institution
+          p Institución
+          input#inputInstitution(type="text",  placeholder="Universidad de Guanajuato", name="institution")
+        #rol
+          p Tipo de Usuario
+          input#inputAdmin(type="radio", name="rol", value="admin")
+          Thing#a Administrador
+          br
+          input#inputSuscriber(type="radio", name="rol", value="suscriber")  
+          Thing#s Suscritor
+          br
+        #submit
+          button#btnSubmit(type="submit") Aceptar
+          a(href="http://localhost:3000/") Cancelar
