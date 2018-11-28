@@ -7,16 +7,16 @@ html
     #header
       h1= title
     #Intructions
-      h1 Ingresa los datos 
+      h1 Ingresa los datos
 
     #fill
       form#formAddCol(name="addcall",method="post",action="/addcall")
         
-        #title
-          p Título
-          input#inputTitle(type="text", placeholder="Ej. Movilidad", name="title")
+        #mail
+          p Correo
+          input#inputTitle(type="text",placeholder="Ej. email@example.com ", name="mail")
         
-        #institution
+        #password
           p Institución
           input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution")
         
@@ -30,4 +30,3 @@ html
         #submit
           button#btnSubmit(type="submit") Aceptar
           a(href="http://localhost:3000/explore") Cancelar
-
