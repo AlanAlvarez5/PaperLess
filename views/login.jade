@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+      link(href='/stylesheets/addcall.css', rel='stylesheet')
+      title Login
+    body
+    #header
+      h1= title
+    #Intructions
+      p Ingresa las características de la nueva convocatoria
+
+    #fill
+      form#formAddCol(name="addcall",method="post",action="/addcall")
+
+        #title
+          p Título
+          input#inputTitle(type="text", placeholder="Ej. Movilidad", name="title")
+
+        #institution
+          p Institución
+          input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution")
+
+        #date
+          p Fecha límite
+          input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date")
+
+        #description
+          p Descripción
+          input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description")
+        #submit
+          button#btnSubmit(type="submit") Aceptar
+          a(href="http://localhost:3000/explore") Cancelar
