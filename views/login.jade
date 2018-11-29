@@ -5,7 +5,8 @@ html
       title Log in
     body
     #header
-      img(src="/images/logo.png")
+      a(href="http://localhost:3000/explore")
+        img(src="/images/logo.png")
   
     #box
       #fill
@@ -15,11 +16,11 @@ html
           
           #mail
             p Correo 
-            input#inputTitle(type="text", name="mail")
+            input#inputTitle(type="text", name="email")
           
           #password
             p Contraseña
-            input#inputInstitution(type="text", name="password")
+            input#inputInstitution(type="password", name="password")
           
           #submit
             a(href="http://localhost:3000") Cancelar
