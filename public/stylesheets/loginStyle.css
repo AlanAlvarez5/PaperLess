@@ -60,7 +60,7 @@ a
     margin:0;
     padding: 0;
     width: 30em;
-    background-color: #ffffff;
+    background-color: rgba(229,230,232,0.96);
     border-radius: 10pt;
     margin-top: 10%;
 }
