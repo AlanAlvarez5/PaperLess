@@ -1,25 +1,26 @@
 doctype html
 html
     head
-      link(href='/stylesheets/addcall.css', rel='stylesheet')
+      link(href='/stylesheets/loginStyle.css', rel='stylesheet')
       title Log in
     body
     #header
-      h1= title
-    #Intructions
-      h1 Log in
-
-    #fill
-      form#formAddCol(name="addcall",method="post",action="/addcall")
-        
-        #mail
-          p Correo
-          input#inputTitle(type="text", name="mail")
-        
-        #password
-          p Contraseña
-          input#inputInstitution(type="text", name="password")
-        
-        #submit
-          button#btnSubmit(type="submit") Aceptar
-          a(href="http://localhost:3000/explore") Cancelar
+      img(src="/images/logo.png")
+  
+    #box
+      #fill
+        #Intructions
+          h1 Log in
+        form#formAddCol(name="addcall",method="post",action="/addcall")
+          
+          #mail
+            p Correo 
+            input#inputTitle(type="text", name="mail")
+          
+          #password
+            p Contraseña
+            input#inputInstitution(type="text", name="password")
+          
+          #submit
+            a(href="http://localhost:3000") Cancelar
+            button#btnSubmit(type="submit") Aceptar

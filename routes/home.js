@@ -14,12 +14,16 @@ router.get('/addcall', function(req, res){
   res.render('addcall', {title:'Crea una nueva convocatoria'});
 });
 
+router.get('/login', function(req, res){
+  res.render('login', {title:'Login'});
+});
+
 router.get('/explore', function(req, res) {
   var db = req.db;
   var collection = db.get('calls');
   collection.find({},{},function(e,docs){
       res.render('explore', {
-          "calls" : docs 
+          "calls" : docs
       });
   });
 });
