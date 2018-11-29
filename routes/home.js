@@ -28,6 +28,39 @@ router.get('/explore', function(req, res) {
   });
 });
 
+
+router.post('/login', function (req, res){
+    // Set our internal DB variable
+    var db = req.db;
+    // Get our form values. These rely on the "name" attributes
+    
+    var lgemail = req.body.email;
+    var lgpassword = req.body.password;
+
+    // Set our collection
+    var collection = db.get('users');
+
+    // Find the user
+    var listed = collection.findOne({
+          email: lgemail },
+        { password: lgpassword 
+        }, function(err, doc){
+            if (err) {
+                // If it failed, return error
+                res.send("There was a problem adding the information to the database.");
+            }
+            else {
+                // And forward to success page
+                res.redirect("addcall");
+            }
+        }
+    );
+
+    if (listed) {
+        res.body.alert("Alerta");   
+    }
+});
+
 router.post('/addcall', function(req, res) {
 
   // Set our internal DB variable
@@ -95,5 +128,7 @@ router.post('/adduser', function (req, res){
         }
     });
 });
+
+
 
 module.exports = router;
