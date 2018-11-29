@@ -105,16 +105,16 @@ body {
     top:0;
     left:50%;
     opacity:0;
-   display:block;
+    display:block;
     content:"";
     width:0%;
     height:40px;
-    background-color:#25516bd2;
+    background-color:#2d5268d2;
     border:1px solid transparent;
-   transform:skewX(-40deg);
-   -webkit-transform:skewX(-40deg);
-   -moz-transform:skewX(-40deg);
-   transform-origin:center center;
+    transform:skewX(-40deg);
+    -webkit-transform:skewX(-40deg);
+    -moz-transform:skewX(-40deg);
+    transform-origin:center center;
     -webkit-transform-origin:center center;
     -ms-transform-origin:center center;
     -moz-transform-origin:center center;
@@ -127,7 +127,7 @@ body {
 {
    z-index:10;
    position:relative;
-    color:#25516bd2;
+   color:#25516bd2;
    transition:color .35s;
    -webkit-transition:color .35s;
    -moz-transition:color .35s;
