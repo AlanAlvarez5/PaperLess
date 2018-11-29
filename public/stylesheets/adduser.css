@@ -14,12 +14,14 @@ a
 
 img
 {
-    width: 89px;
+    width: 80px;
     height: 80px;
 }
 
 #header
 {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 5em;
     background-image: linear-gradient(to left, #00CBFF, #25516b);
