@@ -1,8 +1,21 @@
-extends layout
+doctype html
+html
+    head
+      link(href='/stylesheets/homeStyle.css', rel='stylesheet')
+      title PaperLess
+    body
+    #header
+      #Home
+        img(src="/images/logo.png")
+        h1 PaperLess
+      h2 Ecological yet practical
+      #button
+        a.actionBtn5(href="http://localhost:3000/explore")
+          span.hover
+            span.txt EXPLORAR
 
-block content
-  h1= title
-  h2 Bienvenido a PaperLess. 
-  p Aquí podrás crear convocatorias para poder compartirlas con otros usuarios. 
-  a(href="http://localhost:3000/explore") Explore
-  
+    #homecontainer
+      h1 Ecológico
+      h2 Rápido
+      h3 Organizado
+     

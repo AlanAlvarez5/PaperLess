@@ -7,8 +7,9 @@ html
     #header
       img(src="/images/logo.png")
       h1 Explore 
-    p Esta es la lista de convocatorias existentes.
-    a(href="http://localhost:3000/addcall") Agregar Convocatoria
+    #descr
+      p Esta es la lista de convocatorias existentes.
+      a(href="http://localhost:3000/addcall") Agregar Convocatoria
     
     #callcontainer
       each call, i in calls 
