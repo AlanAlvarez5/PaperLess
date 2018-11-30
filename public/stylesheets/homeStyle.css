@@ -157,8 +157,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
-    align-content: center;
-    
+    align-content: center;   
+    flex-direction: row;
 }
 
 #eco img
@@ -168,7 +168,6 @@ body {
     height: 200pt;
     margin-top: 20pt;
     margin-left: 88pt;
-    text-align: left;
     box-shadow: #000000a9 0pt 3pt 30pt;
     
 }
@@ -180,7 +179,6 @@ body {
     height: 200pt;
     margin-top: 20pt;
     margin-left: 88pt;
-    text-align: left;
     box-shadow: #000000a9 0pt 3pt 30pt;
 }
 
@@ -191,7 +189,5 @@ body {
     height: 200pt;
     margin-top: 20pt;
     margin-left: 88pt;
-    text-align: left;
     box-shadow: #000000a9 0pt 3pt 30pt;
 }
-
