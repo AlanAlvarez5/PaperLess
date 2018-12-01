@@ -19,4 +19,12 @@ html
             input#inputdocument(type="text",placeholder="Documento#{i}", name="document#{i}")
             br
     
-    #button
+    #addinput
+        //button#btnNewDocBox(type="newdocbox") Agregar
+        a(href="http://localhost:3000/reqdoc")
+            img(src="/images/buttonplus.png")
+
+    #submit
+        button#btnSubmit(type="submit") Aceptar
+        a(href="http://localhost:3000/explore") Cancelar
+

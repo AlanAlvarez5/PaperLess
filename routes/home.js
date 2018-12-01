@@ -108,8 +108,8 @@ router.post('/addcall', function(req, res) {
   });
 });
 
-/*
-// Con acción de boton +, añade nuevos textboxs
+
+// Con acción de boton +, añade nuevos textbox
 router.post('/reqdoc', function(req, res) {
   // Set our internal DB variable
   var db = req.db;
@@ -122,7 +122,7 @@ router.post('/reqdoc', function(req, res) {
 
   // Submit to the DB
   collection.insert({
-      "name" : name,
+      "space" : space,
   }, function (err, doc) {
       if (err) {
           // If it failed, return error
@@ -130,12 +130,12 @@ router.post('/reqdoc', function(req, res) {
       }
       else {
           // And forward to success page
-          res.redirect("addcall");
+          res.redirect("reqdoc");
       }
   });
 });
 
-*/
+
 
 router.post('/adduser', function (req, res){
     // Set our internal DB variable
