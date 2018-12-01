@@ -110,7 +110,7 @@ router.post('/addcall', function(req, res) {
 
 
 // Con acción de boton +, añade nuevos textbox
-router.post('/reqdoc', function(req, res) {
+router.post('/reqdocadd', function(req, res) {
   // Set our internal DB variable
   var db = req.db;
 
@@ -135,6 +135,38 @@ router.post('/reqdoc', function(req, res) {
   });
 });
 
+// Con acción de boton +, añade nuevos textbox
+router.post('/reqdocdelete', function(req, res) {
+    // Set our internal DB variable
+    var db = req.db;
+  
+    // Get our form values. These rely on the "name" attributes
+    var trued = " ";
+  
+    // Set our collection
+    var collection = db.get('reqdocspace');
+  
+    // Submit to the DB
+    collection.remove(
+        { "space": " " }, { justOne: true}/*, function (err, doc) {
+        
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // And forward to success page
+            res.redirect("reqdoc");
+        }
+        
+    }
+    */
+    );
+    res.redirect("reqdoc");
+
+  });
+
+  
 
 
 router.post('/adduser', function (req, res){

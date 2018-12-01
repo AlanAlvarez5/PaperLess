@@ -16,13 +16,22 @@ html
 
     #reqdoccontainer
         each doc, i in reqdocspace
-            input#inputdocument(type="text",placeholder="Documento#{i}", name="document#{i}")
+            input#inputdocument(type="text",placeholder="Documento #{i+1}", name="document#{i}")
             br
     
-    #addinput
-        //button#btnNewDocBox(type="newdocbox") Agregar
-        a(href="http://localhost:3000/reqdoc")
-            img(src="/images/buttonplus.png")
+    #buttons
+        #addinput
+            form#formAddInput(name="reqdocadd",method="post",action="/reqdocadd")
+                //a(href="http://localhost:3000/reqdoc")
+                    img(src="/images/buttonplus.png")
+                button#btnAddInput(type="addinput") +
+    
+        #deleteinput
+            form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
+                //a(href="http://localhost:3000/reqdoc")
+                    img(src="/images/buttonplus.png")
+                button#btnDeleteInput(type="deleteinput") -
+
 
     #submit
         button#btnSubmit(type="submit") Aceptar
