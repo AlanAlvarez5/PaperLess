@@ -1,4 +1,5 @@
 doctype html
+link(rel='icon', type='image/png', href='/images/logo.png')
 html
     head
       link(href='/stylesheets/homeStyle.css', rel='stylesheet')
@@ -8,7 +9,6 @@ html
     #header
       a(href="http://localhost:3000/adduser") Sign In
       #Home
-        
         img(src="/images/logo.png")
         h1 PaperLess
         
@@ -19,7 +19,32 @@ html
             span.txt EXPLORAR
 
     #homecontainer
-      h1 Ecológico
-      h2 Rápido
-      h3 Organizado
-     
+      #eco
+        h1 Ecológico 
+        .box.actionImg2
+          img(src="/images/eco.jpg", alt='This image is a css3 example image.')
+          | &#x9;
+          .hover
+            .sub_tit ¡Adiós al papel innecesario!
+
+      #fast
+        h1 Rápido 
+        .box.actionImg2
+          img(src="/images/fast.jpg", alt='This image is a css3 example image.')
+          | &#x9;
+          .hover
+            .sub_tit ¡Todo en un solo clic!
+
+      #org
+        h1 Organizado  
+        .box.actionImg2
+          img(src="/images/org.jpg", alt='This image is a css3 example image.')
+          | &#x9;
+          .hover
+            .sub_tit ¡Desde la comodidad del hogar!
+
+
+   
+
+    
+

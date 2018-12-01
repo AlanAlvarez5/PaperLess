@@ -1,0 +1,27 @@
+doctype html
+link(rel='icon', type='image/png', href='/images/logo.png')
+html
+    head
+      link(href='/stylesheets/reqdocStyle.css', rel='stylesheet')
+      title Documentacion Requerida
+    body
+    #header
+      a(href="http://localhost:3000/explore")
+        img(src="/images/logo.png")
+      
+      h1= title
+     
+    #Intructions
+      h1 Señale cuales son los documentos requeridos
+
+    //#textboxcontainer
+      each doc, i in calls
+        #doc
+        input#inputDoc(type="text",placeholder=" ", name="doc")
+
+    #callcontainer
+      each call, i in calls 
+        #call
+          h3 #{call.title}
+          p #{call.institution}
+          p límite: #{call.limited_date}
