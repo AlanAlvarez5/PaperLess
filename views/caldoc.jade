@@ -1,0 +1,49 @@
+doctype html
+link(rel='icon', type='image/png', href='/images/logo.png')
+html
+    head
+      link(href='/stylesheets/caldocStyle.css', rel='stylesheet')
+      title Documentación
+    body
+    #header
+      a(href="http://localhost:3000/explore")
+        img(src="/images/logo.png")
+      
+      h1 Documentación
+    
+    #Intructions
+      h1 Señale cuales son los documentos requeridos
+
+    #callcontainer
+      each call, i in calls 
+        #call
+          h3 #{call.title}
+          p #{call.institution}
+          p límite: #{call.limited_date}
+    
+    #applicant
+            label(for=id) #{label}
+            select(name=id placeholder=placeholder id=id)
+            each user in calls
+                #user
+                option #{user.tile}
+        
+
+
+    #buttons
+        #addinput
+            form#formAddInput(name="reqdocadd",method="post",action="/reqdocadd")
+                //a(href="http://localhost:3000/reqdoc")
+                    img(src="/images/buttonplus.png")
+                button#btnAddInput(type="addinput") +
+    
+        #deleteinput
+            form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
+                //a(href="http://localhost:3000/reqdoc")
+                    img(src="/images/buttonplus.png")
+                button#btnDeleteInput(type="deleteinput") -
+
+
+    #submit
+        button#btnSubmit(type="submit") Aceptar
+        a(href="http://localhost:3000/explore") Cancelar

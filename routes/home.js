@@ -22,7 +22,37 @@ router.get('/reqdoc', function(req, res) {
             "reqdocspace" : docs
         });
     });
-  });
+});
+
+router.get('/caldoc', function(req, res) {
+    var db = req.db;
+    var collection1 = db.get('calls');
+    var collection2 = db.get('users');
+    collection1.find({},{},function(e,docs){
+        res.render('caldoc', {
+            "calls" : docs
+        });
+    });
+    collection2.find({},{},function(e,docs){
+        res.render('caldoc', {
+            "users" : docs
+        });
+    });
+});
+/*
+router.get('/caldoccalls', function(req, res) {
+    var db = req.db;
+    var collection = db.get('calls');
+    collection.find({},{},function(e,docs){
+        res.render('caldoc', {
+            "calls" : docs
+        });
+    });
+});
+*/
+
+
+
 
 router.get('/login', function(req, res){
   res.render('login', {title:'Login'});
