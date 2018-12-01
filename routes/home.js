@@ -50,7 +50,10 @@ router.post('/login', function (req, res){
     // Set our collection
     var collection = db.get('users');
 
+    res.redirect("/explore");
+    //console.log('Alerta');
     // Find the user
+    /*
     var listed = collection.findOne({
           email: lgemail },
         { password: lgpassword 
@@ -65,10 +68,12 @@ router.post('/login', function (req, res){
             }
         }
     );
-
+    */
+/*
     if (listed) {
         res.body.alert("Alerta");   
     }
+    */
 });
 
 router.post('/addcall', function(req, res) {
