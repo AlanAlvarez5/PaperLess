@@ -33,16 +33,21 @@ html
         #description
           p Descripción
           input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description")
+
+        #reqdoc
+          a(href="http://localhost:3000/reqdoc") Documentación requerida
+        
         #submit
           button#btnSubmit(type="submit") Aceptar
           a(href="http://localhost:3000/explore") Cancelar
 
-    #docscontainer
+    //#docscontainer
       form#formAddDocs(name="addcall", method="post", action="/addcall")
        
-        //#docbox
-        //  p
+        #docbox
+          input#inputDoc1(type="text", cols)
 
         #newdocbox
-          button#btnNewDocBox(type="newdocbox") 
-
+          //button#btnNewDocBox(type="newdocbox") Agregar
+          //a(href="http://localhost:3000/explore")
+          img(src="/images/buttonplus.png")
