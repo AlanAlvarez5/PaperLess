@@ -14,6 +14,26 @@ router.get('/addcall', function(req, res){
   res.render('addcall', {title:'Crea una nueva convocatoria'});
 });
 
+router.get('/reqdoc', function(req, res) {
+    res.render('reqdoc', {title: 'Documentación requerida'});
+    /*var db = req.db;
+    var collection = db.get('calls');
+    // Encuentra espacios vacios para añadir un determinado numero de textbox
+    collection.find({},{},function(e,docs){
+        res.render('reqdoc', {
+            "calls" : docs
+        });
+    });
+    */
+   var db = req.db;
+   var collection = db.get('calls');
+   collection.find({},{},function(e,docs){
+       res.render('reqdoc', {
+           "calls" : docs
+       });
+   });
+});
+
 router.get('/login', function(req, res){
   res.render('login', {title:'Login'});
 });
@@ -92,6 +112,35 @@ router.post('/addcall', function(req, res) {
       }
   });
 });
+
+/*
+// Con acción de boton +, añade nuevos textboxs
+router.post('/reqdoc', function(req, res) {
+  // Set our internal DB variable
+  var db = req.db;
+
+  // Get our form values. These rely on the "name" attributes
+  var space = " ";
+
+  // Set our collection
+  var collection = db.get('reqdocspace');
+
+  // Submit to the DB
+  collection.insert({
+      "name" : name,
+  }, function (err, doc) {
+      if (err) {
+          // If it failed, return error
+          res.send("There was a problem adding the information to the database.");
+      }
+      else {
+          // And forward to success page
+          res.redirect("addcall");
+      }
+  });
+});
+
+*/
 
 router.post('/adduser', function (req, res){
     // Set our internal DB variable
