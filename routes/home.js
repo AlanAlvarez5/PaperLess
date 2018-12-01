@@ -15,24 +15,14 @@ router.get('/addcall', function(req, res){
 });
 
 router.get('/reqdoc', function(req, res) {
-    res.render('reqdoc', {title: 'Documentación requerida'});
-    /*var db = req.db;
-    var collection = db.get('calls');
-    // Encuentra espacios vacios para añadir un determinado numero de textbox
+    var db = req.db;
+    var collection = db.get('reqdocspace');
     collection.find({},{},function(e,docs){
         res.render('reqdoc', {
-            "calls" : docs
+            "reqdocspace" : docs
         });
     });
-    */
-   var db = req.db;
-   var collection = db.get('calls');
-   collection.find({},{},function(e,docs){
-       res.render('reqdoc', {
-           "calls" : docs
-       });
-   });
-});
+  });
 
 router.get('/login', function(req, res){
   res.render('login', {title:'Login'});

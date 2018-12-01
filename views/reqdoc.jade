@@ -9,19 +9,14 @@ html
       a(href="http://localhost:3000/explore")
         img(src="/images/logo.png")
       
-      h1= title
+      h1 Documentación Requerida
      
     #Intructions
       h1 Señale cuales son los documentos requeridos
 
-    //#textboxcontainer
-      each doc, i in calls
-        #doc
-        input#inputDoc(type="text",placeholder=" ", name="doc")
-
-    #callcontainer
-      each call, i in calls 
-        #call
-          h3 #{call.title}
-          p #{call.institution}
-          p límite: #{call.limited_date}
+    #reqdoccontainer
+        each doc, i in reqdocspace
+            input#inputdocument(type="text",placeholder="Documento#{i}", name="document#{i}")
+            br
+    
+    #button
