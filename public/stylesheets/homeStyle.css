@@ -787,16 +787,14 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 100pt;
-    padding-left: 100pt;
-    
+    height: 100pt;   
 }
 
 #last img
 {
     width: 200pt;
     height: 100pt;
-    padding-left: 35pt;
+    padding-left: 150pt;
 }
 
 #ug img
