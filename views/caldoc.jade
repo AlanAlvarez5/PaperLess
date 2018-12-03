@@ -14,19 +14,17 @@ html
     #Intructions
       h1 Señale cuales son los documentos requeridos
 
-    #callcontainer
-      form#formAddInput(name="caldoccall",method="get",action="/caldoccall")
-        each call, i in calls
-            #call
-                h3 #{call.title}
-                p #{call.institution}
-                p límite: #{call.limited_date}
+    //-#callcontainer
+      each call, i in calls 
+        #call
+          h3 #{call.title}
+          p #{call.institution}
+          p límite: #{call.limited_date}
     
-    //-#applicant
-        form#formAddInput(name="caldocusers",method="get",action="/caldocusers")
-            select(name=id placeholder=placeholder id=id)
-                each user in users
-                    #user
+    #applicant
+        select(name=id placeholder=placeholder id=id)
+            each user in users
+                #user
                     option #{user.name}
         
 

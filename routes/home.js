@@ -10,6 +10,10 @@ router.get('/adduser', function (req, res){
     res.render('adduser', {title: 'Crear Nuevo Usuario'});
 });
 
+router.get('/edituser', function(req, res) {
+    res.render('edituser', {title:'Editar información'});
+});
+
 router.get('/addcall', function(req, res){
   res.render('addcall', {title:'Crea una nueva convocatoria'});
 });
@@ -24,47 +28,25 @@ router.get('/reqdoc', function(req, res) {
     });
 });
 
-router.get('/caldoc', function(req, res){
-    res.render('caldoc', {title:'Crea una'});
-});
-
-router.get('/caldoccall', function(req, res) {
+router.get('/caldoc', function(req, res) {
     var db = req.db;
-    var collection1 = db.get('calls');
-    collection.find({},{},function(e,docs){
+    //var db2 = req.db;
+    //var collection1 = db.get('calls');
+    var collection2 = db.get('users');
+    /*
+    collection1.find({},{},function(e,docs){
         res.render('caldoc', {
             "calls" : docs
         });
     });
-});
-
-router.get('/caldocuser', function(req, res) {
-    var db = req.db;
-    var collection = db.get('users');
-    collection.find({},{},function(e,docs){
+*/
+    collection2.find({},{},function(e,docs){
         res.render('caldoc', {
             "users" : docs
         });
     });
+
 });
-
-
-
-
-/*
-router.get('/caldoccalls', function(req, res) {
-    var db = req.db;
-    var collection = db.get('calls');
-    collection.find({},{},function(e,docs){
-        res.render('caldoc', {
-            "calls" : docs
-        });
-    });
-});
-*/
-
-
-
 
 router.get('/login', function(req, res){
   res.render('login', {title:'Login'});
@@ -79,7 +61,6 @@ router.get('/explore', function(req, res) {
       });
   });
 });
-
 
 router.post('/login', function (req, res){
     // Set our internal DB variable
@@ -150,7 +131,6 @@ router.post('/addcall', function(req, res) {
   });
 });
 
-
 // Con acción de boton +, añade nuevos textbox
 router.post('/reqdocadd', function(req, res) {
   // Set our internal DB variable
@@ -199,19 +179,87 @@ router.post('/reqdocdelete', function(req, res) {
         else {
             // And forward to success page
             res.redirect("reqdoc");
-        }
-        
+        } 
     }
     */
     );
     res.redirect("reqdoc");
 
-  });
-
-  
-
+});
 
 router.post('/adduser', function (req, res){
+    // Set our internal DB variable
+    var db = req.db;
+
+    // Get our form values. These rely on the "name" attributes
+    var name = req.body.name;
+    var last_name = req.body.lastname;
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    var institution = req.body.institution;
+    var is_admin = req.body.rol;
+    // Set our collection
+    var collection = db.get('users');
+
+    // Submit to the DB
+    collection.insert({
+        "name" : name,
+        "last_name" : last_name,
+        "username" : username,
+        "email" : email,
+        "password" : password,
+        "institution" : institution,
+        "is_admin" : is_admin
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // And forward to success page
+            res.redirect("explore");
+        }
+    });
+});
+
+router.post('/adduser', function (req, res){
+    // Set our internal DB variable
+    var db = req.db;
+
+    // Get our form values. These rely on the "name" attributes
+    var name = req.body.name;
+    var last_name = req.body.lastname;
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    var institution = req.body.institution;
+    var is_admin = req.body.rol;
+    // Set our collection
+    var collection = db.get('users');
+
+    // Submit to the DB
+    collection.insert({
+        "name" : name,
+        "last_name" : last_name,
+        "username" : username,
+        "email" : email,
+        "password" : password,
+        "institution" : institution,
+        "is_admin" : is_admin
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // And forward to success page
+            res.redirect("explore");
+        }
+    });
+});
+
+router.post('/edituser', function (req, res){
     // Set our internal DB variable
     var db = req.db;
 
