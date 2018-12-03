@@ -24,21 +24,33 @@ router.get('/reqdoc', function(req, res) {
     });
 });
 
-router.get('/caldoc', function(req, res) {
+router.get('/caldoc', function(req, res){
+    res.render('caldoc', {title:'Crea una'});
+});
+
+router.get('/caldoccall', function(req, res) {
     var db = req.db;
     var collection1 = db.get('calls');
-    var collection2 = db.get('users');
-    collection1.find({},{},function(e,docs){
+    collection.find({},{},function(e,docs){
         res.render('caldoc', {
             "calls" : docs
         });
     });
-    collection2.find({},{},function(e,docs){
+});
+
+router.get('/caldocuser', function(req, res) {
+    var db = req.db;
+    var collection = db.get('users');
+    collection.find({},{},function(e,docs){
         res.render('caldoc', {
             "users" : docs
         });
     });
 });
+
+
+
+
 /*
 router.get('/caldoccalls', function(req, res) {
     var db = req.db;
