@@ -80,7 +80,7 @@ router.post('/login', function (req, res){
     // Set our internal DB variable
     var db = req.db;
     // Get our form values. These rely on the "name" attributes
-    
+
     var lgemail = req.body.email;
     var lgpassword = req.body.password;
 

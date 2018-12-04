@@ -160,6 +160,7 @@ body {
     align-content: center;   
     flex-direction: row;
     padding-top: 20pt;
+
 }
 
 
@@ -423,25 +424,26 @@ body {
 
 #Paperdescr
 {
-    padding-top: 50pt;
-    padding-left: 120pt;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;  
-    flex-direction: row;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;   
+    padding-top: 20pt;
+    width: 100%;
+    height: auto;
 
 }
 #Paperdescr .txt_view {
     overflow:hidden;
     position:relative;
-    width:978px;
-    height:300px;
+    width: 100%;
+    height: auto;
     background-color:#fff;
      box-sizing:border-box;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
+    
 }
 #Paperdescr .actionTxtType9 {
     padding:50px 40px;
@@ -613,7 +615,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 400pt;
+    height: 300pt;
    
 }
 
@@ -622,6 +624,10 @@ body {
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-right: 20pt;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;  
     
 
 }
@@ -658,10 +664,9 @@ body {
 
 #empresa
 {
-    padding-top: 95pt;
+    padding-top: 30pt;
     padding-left: 25pt;
-    margin-right: 15pt;
-    
+
 }
 
 #empresa .box {
@@ -787,30 +792,33 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 100%; 
+    
+    flex-wrap: wrap;
+    align-content: center;   
+    padding-top: 20pt;
     width: 100%;
-    height: 100pt;   
+    height: 100pt;
 }
 
 #last img
 {
     width: 200pt;
     height: 100pt;
-    padding-left: 150pt;
 }
 
 #ug img
 {
     width: 340pt;
     height: 100pt;
-    padding-left: 0pt;
+
 }
 
 #github img
 {
     width: 150pt;
     height: 41pt;
-    padding-left: 0pt;
     padding-top: 30pt;
 }
 
