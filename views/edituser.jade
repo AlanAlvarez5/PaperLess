@@ -16,27 +16,27 @@ html
       h1 Ingresa los datos
     #fill
       
-      form#formData(name="adduser",method="post",action="/adduser")
+      form#formData(name="adduser",method="post",action="/adduser",required)
         #name
           p Nombre
-          input#inputName(type="text", placeholder="Antonio", name="name")
+          input#inputName(type="text", placeholder="Antonio", name="name",required)
         #lastname
           p Apellido
-          input#inputLastname(type="text", placeholder="Alvarez", name="lastname")
+          input#inputLastname(type="text", placeholder="Alvarez", name="lastname",required)
         #username
           p Username
-          input#inputUsername(type="text", placeholder="antonio98", name="username")
+          input#inputUsername(type="text", placeholder="antonio98", name="username",required)
         #email
           p E-mail
-          input#inputemail(type="mail",  placeholder="ejemplo@mail.com", name="email")
+          input#inputemail(type="mail",  placeholder="ejemplo@mail.com", name="email",required)
         #password
           p Contraseña
-          input#inputPassword(type="password",  placeholder="Nueva contraseña", name="password")
+          input#inputPassword(type="password",  placeholder="Nueva contraseña", name="password",required)
           p Confirmar contraseña
-          input#inputRepeatPassword(type="password",  placeholder="Confirmar contraseña", name="repeatpassword")
+          input#inputRepeatPassword(type="password",  placeholder="Confirmar contraseña", name="repeatpassword",required)
         #institution
           p Institución
-          input#inputInstitution(type="text",  placeholder="Universidad de Guanajuato", name="institution")
+          input#inputInstitution(type="text",  placeholder="Universidad de Guanajuato", name="institution",required)
         //-#rol
           p Tipo de Usuario
           input#inputAdmin(type="checkbox", name="rol")

@@ -17,11 +17,11 @@ html
           
           #mail
             p Correo 
-            input#inputTitle(type="text", name="email")
+            input#inputTitle(type="mail", name="email", required)
           
           #password
             p Contraseña
-            input#inputInstitution(type="password", name="password")
+            input#inputInstitution(type="password", name="password", required, maxlength=6 )
           
           #submit
             a(href="http://localhost:3000") Cancelar
