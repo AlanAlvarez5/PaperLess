@@ -36,33 +36,15 @@ html
                 #user
                     option #{user.name}
             option option1
-          
-    #caldocbox
-         p M B
-        //-#checkboxes
-        input#checkboxBad(type='checkbox', name='Bad', checked=false)
-        input#checkboxGood(type='checkbox', name='Good', checked=false)
-            //-p Documento
-        //-#checkboxes2
-        //-input#checkboxBad(type='checkbox', name='Bad1', checked=false)
-        //-input#checkboxGood(type='checkbox', name='Good1', checked=false)
-            //-p Documento1
-
-
-    //-#buttons
-        #addinput
-            form#formAddInput(name="reqdocadd",method="post",action="/reqdocadd")
-                //a(href="http://localhost:3000/reqdoc")
-                    img(src="/images/buttonplus.png")
-                button#btnAddInput(type="addinput") +
     
-        #deleteinput
-            form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
-                //a(href="http://localhost:3000/reqdoc")
-                    img(src="/images/buttonplus.png")
-                button#btnDeleteInput(type="deleteinput") -
-
-
+    #caldocbox
+        #label
+            p M B
+        #checkboxes
+            input#checkboxBad(type='checkbox', name='Bad', checked=false)
+            input#checkboxGood(type='checkbox', name='Good', checked=false)
+            p Documento
+            
     #submit
-        button#btnSubmit(type="submit") Aceptar
-        a(href="http://localhost:3000/explore") Cancelar
+        a(href="http://localhost:3000/explore") Corregir
+        button#btnSubmit(type="submit") Guardar
