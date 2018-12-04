@@ -11,10 +11,10 @@ html
       
       h1 Documentación
     
-    #Intructions
+    //-#Intructions
       h1 Señale cuales son los documentos requeridos
 
-    //-#callcontainer
+    #callcontainer
       each call, i in calls 
         #call
           h3 #{call.title}
@@ -22,14 +22,34 @@ html
           p límite: #{call.limited_date}
     
     #applicant
-        select(name=id placeholder=placeholder id=id)
-            each user in users
+        p Solicitante
+        select(name=application placeholder=placeholder id=id)
+            //-each user in users
                 #user
                     option #{user.name}
-        
+            option option1
+
+    #archive
+        p Archivo
+        select(name=archive placeholder=placeholder id=id)
+            //-each user in users
+                #user
+                    option #{user.name}
+            option option1
+          
+    #caldocbox
+         p M B
+        //-#checkboxes
+        input#checkboxBad(type='checkbox', name='Bad', checked=false)
+        input#checkboxGood(type='checkbox', name='Good', checked=false)
+            //-p Documento
+        //-#checkboxes2
+        //-input#checkboxBad(type='checkbox', name='Bad1', checked=false)
+        //-input#checkboxGood(type='checkbox', name='Good1', checked=false)
+            //-p Documento1
 
 
-    #buttons
+    //-#buttons
         #addinput
             form#formAddInput(name="reqdocadd",method="post",action="/reqdocadd")
                 //a(href="http://localhost:3000/reqdoc")
