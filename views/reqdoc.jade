@@ -1,0 +1,39 @@
+doctype html
+link(rel='icon', type='image/png', href='/images/logo.png')
+html
+    head
+      link(href='/stylesheets/reqdocStyle.css', rel='stylesheet')
+      title Documentacion Requerida
+    body
+    #header
+      a(href="http://localhost:3000/explore")
+        img(src="/images/logo.png")
+      
+      h1 Documentación Requerida
+     
+    #Intructions
+      h1 Señale cuales son los documentos requeridos
+
+    #reqdoccontainer
+        each doc, i in reqdocspace
+            input#inputdocument(type="text",placeholder="Documento #{i+1}", name="document#{i}")
+            br
+    
+    #buttons
+        #addinput
+            form#formAddInput(name="reqdocadd",method="post",action="/reqdocadd")
+                //a(href="http://localhost:3000/reqdoc")
+                    img(src="/images/buttonplus.png")
+                button#btnAddInput(type="addinput") +
+    
+        #deleteinput
+            form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
+                //a(href="http://localhost:3000/reqdoc")
+                    img(src="/images/buttonplus.png")
+                button#btnDeleteInput(type="deleteinput") -
+
+
+    #submit
+        button#btnSubmit(type="submit") Aceptar
+        a(href="http://localhost:3000/explore") Cancelar
+

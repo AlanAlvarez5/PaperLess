@@ -10,8 +10,42 @@ router.get('/adduser', function (req, res){
     res.render('adduser', {title: 'Crear Nuevo Usuario'});
 });
 
+router.get('/edituser', function(req, res) {
+    res.render('edituser', {title:'Editar información'});
+});
+
 router.get('/addcall', function(req, res){
   res.render('addcall', {title:'Crea una nueva convocatoria'});
+});
+
+router.get('/reqdoc', function(req, res) {
+    var db = req.db;
+    var collection = db.get('reqdocspace');
+    collection.find({},{},function(e,docs){
+        res.render('reqdoc', {
+            "reqdocspace" : docs
+        });
+    });
+});
+
+router.get('/caldoc', function(req, res) {
+    var db = req.db;
+    //var db2 = req.db;
+    //var collection1 = db.get('calls');
+    var collection2 = db.get('users');
+    /*
+    collection1.find({},{},function(e,docs){
+        res.render('caldoc', {
+            "calls" : docs
+        });
+    });
+*/
+    collection2.find({},{},function(e,docs){
+        res.render('caldoc', {
+            "users" : docs
+        });
+    });
+
 });
 
 router.get('/login', function(req, res){
@@ -28,7 +62,6 @@ router.get('/explore', function(req, res) {
   });
 });
 
-
 router.post('/login', function (req, res){
     // Set our internal DB variable
     var db = req.db;
@@ -40,7 +73,10 @@ router.post('/login', function (req, res){
     // Set our collection
     var collection = db.get('users');
 
+    res.redirect("/explore");
+    //console.log('Alerta');
     // Find the user
+    /*
     var listed = collection.findOne({
           email: lgemail },
         { password: lgpassword 
@@ -55,10 +91,12 @@ router.post('/login', function (req, res){
             }
         }
     );
-
+    */
+/*
     if (listed) {
         res.body.alert("Alerta");   
     }
+    */
 });
 
 router.post('/addcall', function(req, res) {
@@ -93,7 +131,135 @@ router.post('/addcall', function(req, res) {
   });
 });
 
+// Con acción de boton +, añade nuevos textbox
+router.post('/reqdocadd', function(req, res) {
+  // Set our internal DB variable
+  var db = req.db;
+
+  // Get our form values. These rely on the "name" attributes
+  var space = " ";
+
+  // Set our collection
+  var collection = db.get('reqdocspace');
+
+  // Submit to the DB
+  collection.insert({
+      "space" : space,
+  }, function (err, doc) {
+      if (err) {
+          // If it failed, return error
+          res.send("There was a problem adding the information to the database.");
+      }
+      else {
+          // And forward to success page
+          res.redirect("reqdoc");
+      }
+  });
+});
+
+// Con acción de boton +, añade nuevos textbox
+router.post('/reqdocdelete', function(req, res) {
+    // Set our internal DB variable
+    var db = req.db;
+  
+    // Get our form values. These rely on the "name" attributes
+    var trued = " ";
+  
+    // Set our collection
+    var collection = db.get('reqdocspace');
+  
+    // Submit to the DB
+    collection.remove(
+        { "space": " " }, { justOne: true}/*, function (err, doc) {
+        
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // And forward to success page
+            res.redirect("reqdoc");
+        } 
+    }
+    */
+    );
+    res.redirect("reqdoc");
+
+});
+
 router.post('/adduser', function (req, res){
+    // Set our internal DB variable
+    var db = req.db;
+
+    // Get our form values. These rely on the "name" attributes
+    var name = req.body.name;
+    var last_name = req.body.lastname;
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    var institution = req.body.institution;
+    var is_admin = req.body.rol;
+    // Set our collection
+    var collection = db.get('users');
+
+    // Submit to the DB
+    collection.insert({
+        "name" : name,
+        "last_name" : last_name,
+        "username" : username,
+        "email" : email,
+        "password" : password,
+        "institution" : institution,
+        "is_admin" : is_admin
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // And forward to success page
+            res.redirect("explore");
+        }
+    });
+});
+
+router.post('/adduser', function (req, res){
+    // Set our internal DB variable
+    var db = req.db;
+
+    // Get our form values. These rely on the "name" attributes
+    var name = req.body.name;
+    var last_name = req.body.lastname;
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    var institution = req.body.institution;
+    var is_admin = req.body.rol;
+    // Set our collection
+    var collection = db.get('users');
+
+    // Submit to the DB
+    collection.insert({
+        "name" : name,
+        "last_name" : last_name,
+        "username" : username,
+        "email" : email,
+        "password" : password,
+        "institution" : institution,
+        "is_admin" : is_admin
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // And forward to success page
+            res.redirect("explore");
+        }
+    });
+});
+
+router.post('/edituser', function (req, res){
     // Set our internal DB variable
     var db = req.db;
 

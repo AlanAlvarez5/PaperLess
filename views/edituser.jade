@@ -2,18 +2,18 @@ doctype html
 link(rel='icon', type='image/png', href='/images/logo.png')
 html
     head
-      link(href='/stylesheets/adduser.css', rel='stylesheet')
-      title Nueva Usuario
+      link(href='/stylesheets/edituserStyle.css', rel='stylesheet')
+      title Editar Usuario
     body
 
     #header
       a(href="http://localhost:3000/explore")
         img(src="/images/logo.png")
       h1= title
-      a(href="http://localhost:3000/login") Ingresar 
+      //-a(href="http://localhost:3000/login") Ingresar 
 
     #instructions
-      h1 Ingresa tus datos
+      h1 Ingresa los datos
     #fill
       
       form#formData(name="adduser",method="post",action="/adduser")
@@ -37,11 +37,14 @@ html
         #institution
           p Institución
           input#inputInstitution(type="text",  placeholder="Universidad de Guanajuato", name="institution")
-        #rol
+        //-#rol
           p Tipo de Usuario
           input#inputAdmin(type="checkbox", name="rol")
           Thing#a Administrador
           br
         #submit
           a(href="http://localhost:3000/") Cancelar
-          button#btnSubmit(type="submit") Aceptar
+          button#btnSubmit(type="submit") Confirmar
+
+
+
