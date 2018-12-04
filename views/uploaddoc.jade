@@ -1,0 +1,44 @@
+doctype html
+link(rel='icon', type='image/png', href='/images/logo.png')
+html
+    head
+      link(href='/stylesheets/uploaddocStyle.css', rel='stylesheet')
+      title Sube tus archivos
+    body
+    #header
+      a(href="http://localhost:3000/explore")
+        img(src="/images/logo.png")
+      
+      h1 Documentación
+    
+    #Intructions
+      h1 Sube los documentos requeridos
+
+    //-#callcontainer
+      each call, i in calls 
+        #call
+          h3 #{call.title}
+          p #{call.institution}
+          p límite: #{call.limited_date}
+    
+    //-#doccontainer
+        each doc, i in reqdocspace
+            p #{doc.name}
+            input#inputdocument(type="text",placeholder="Documento #{i+1}", name="document#{i}")
+            form#formUpload(name="upload",method="post",action="/uploaddoc")
+                button#btnUpload(type="upload") +
+            br
+
+    #doccontainerexample
+        p Nombre del archivo
+            input#inputdocument(type="text",placeholder="Documento", name="document")
+            form#formUpload(name="upload",method="post",action="/reqdocadd")
+                button#btnUpload(type="upload") +
+        br
+
+    #submit
+        a(href="http://localhost:3000/explore") Cancelar sin loguear
+        button#btnSubmit(type="submit") Aceptar
+        #cancelarl
+            a(href="http://localhost:3000/explore") Cancelar logueado
+

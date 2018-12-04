@@ -16,23 +16,23 @@ html
       h1 Ingresa los datos
 
     #fill
-      form#formAddCol(name="addcall",method="post",action="/addcall")
+      form#formAddCol(name="addcall",method="post",action="/addcall",required)
         
         #mail
           p Título
-          input#inputTitle(type="text",placeholder="Movilidad ", name="title")
+          input#inputTitle(type="text",placeholder="Movilidad ", name="title",required)
         
         #password
           p Institución
-          input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution")
+          input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution",required)
         
         #date
           p Fecha límite
-          input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date")
+          input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date",required)
         
         #description
           p Descripción
-          input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description")
+          input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description",required)
 
         #reqdoc
           a(href="http://localhost:3000/reqdoc") Documentación requerida

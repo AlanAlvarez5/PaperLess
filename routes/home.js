@@ -65,20 +65,21 @@ router.get('/reqdoc', function(req, res) {
 router.get('/caldoc', function(req, res) {
     var db = req.db;
     //var db2 = req.db;
-    //var collection1 = db.get('calls');
+    var collection1 = db.get('calls');
     var collection2 = db.get('users');
-    /*
+    
     collection1.find({},{},function(e,docs){
         res.render('caldoc', {
             "calls" : docs
         });
     });
-*/
+    /*
     collection2.find({},{},function(e,docs){
         res.render('caldoc', {
             "users" : docs
         });
     });
+    */
 
 });
 
@@ -96,11 +97,24 @@ router.get('/explore', function(req, res) {
   });
 });
 
+router.get('/uploaddoc', function(req, res) {
+    res.render('uploaddoc', {title:'Sube tus archivos'});
+/*
+    var db = req.db;
+    var collection = db.get('calls');
+    collection.find({},{},function(e,docs){
+        res.render('explore', {
+            "calls" : docs
+        });
+    });
+*/
+});
+
 router.post('/login', function (req, res){
     // Set our internal DB variable
     var db = req.db;
     // Get our form values. These rely on the "name" attributes
-    
+
     var lgemail = req.body.email;
     var lgpassword = req.body.password;
 
