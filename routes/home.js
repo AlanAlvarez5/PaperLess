@@ -238,10 +238,10 @@ router.post('/adduser', function (req, res){
 
     if (validator.isEmail(email)==false){
         // Si hay error
-        document.getElementById("inputemail").style.borderColor = "red";
+       // document.getElementById("inputemail").style.borderColor = "red";
     }else{
         // Si está todo bien
-        document.getElementById("inputemail").style.borderColor = "green";
+        //document.getElementById("inputemail").style.borderColor = "green";
     // Submit to the DB
     collection.insert({
         "name" : name,
