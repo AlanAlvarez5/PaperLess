@@ -2,38 +2,52 @@ doctype html
 link(rel='icon', type='image/png', href='/images/logo.png')
 html
     head
-      link(href='/stylesheets/reqdocStyle.css', rel='stylesheet')
-      title Documentacion Requerida
+        link(href='/stylesheets/reqdocStyle.css', rel='stylesheet')
+        title Documentacion Requerida
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+        script.
+            $(document).ready(function() {
+            $("#btnAddInput").click(function() {
+                $("ol").append("<input type="text" name="username">");
+                });
+            });
     body
-    #header
-      a(href="http://localhost:3000/explore")
-        img(src="/images/logo.png")
-      
-      h1 Documentación Requerida
-     
-    #Intructions
-      h1 Señale cuales son los documentos requeridos
+        #header
+            a(href="http://localhost:3000/explore")
+                img(src="/images/logo.png")
+        
+            h1 Documentación Requerida
+        
+        #Intructions
+            h1 Señale cuales son los documentos requeridos
 
-    #reqdoccontainer
-        each doc, i in reqdocspace
-            input#inputdocument(type="text",placeholder="Documento #{i+1}", name="document#{i}")
-            br
-    
-    #buttons
-        #addinput
-            form#formAddInput(name="reqdocadd",method="post",action="/reqdocadd")
-                //a(href="http://localhost:3000/reqdoc")
-                    img(src="/images/buttonplus.png")
+        //-#reqdoccontainer
+            each doc, i in reqdocspace
+                input#inputdocument(type="text",placeholder="Documento #{i+1}", name="document#{i}")
+                br
+        #example
+            ol
+                li List item 1
+                li List item 2
+                li List item 3
+            
+            input 
+
+            //-input#inputdocument(type="text",placeholder="Documento", name="document")
+               
+        #buttons
+            #addinput
+                //-form#formAddInput(name="reqdocadd",method="post",action="/reqdocadd")
                 button#btnAddInput(type="addinput") +
-    
-        #deleteinput
-            form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
-                //a(href="http://localhost:3000/reqdoc")
-                    img(src="/images/buttonplus.png")
-                button#btnDeleteInput(type="deleteinput") -
+        
+            #deleteinput
+                form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
+                    //a(href="http://localhost:3000/reqdoc")
+                        img(src="/images/buttonplus.png")
+                    button#btnDeleteInput(type="deleteinput") -
+        
 
-
-    #submit
-        button#btnSubmit(type="submit") Aceptar
-        a(href="http://localhost:3000/explore") Cancelar
+        #submit
+            button#btnSubmit(type='Submit') Aceptar
+            a(href="http://localhost:3000/explore") Cancelar
 
