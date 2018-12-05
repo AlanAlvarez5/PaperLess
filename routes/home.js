@@ -99,8 +99,8 @@ router.get('/explore', function(req, res) {
 });
 
 router.get('/uploaddoc', function(req, res) {
-    res.render('uploaddoc', {title:'Sube tus archivos'});
-/*
+    //res.render('uploaddoc', {title:'Sube tus archivos'});
+
     var db = req.db;
     var collection = db.get('calls');
     collection.find({},{},function(e,docs){
@@ -108,7 +108,7 @@ router.get('/uploaddoc', function(req, res) {
             "calls" : docs
         });
     });
-*/
+
 });
 
 router.post('/login', function (req, res){

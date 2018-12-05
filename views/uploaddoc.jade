@@ -29,12 +29,13 @@ html
                 button#btnUpload(type="upload") +
             br
 
-    #doccontainerexample
+    #doccontainer
         p Nombre del archivo
-            input#inputdocument(type="text",placeholder="Documento", name="document")
-            form#formUpload(name="upload",method="post",action="/upload", enctype="multipart/form-data")
-                input#btnUpload(type="file", name = "filetoupload")
+            //-input#inputdocument(type="text",placeholder="Documento", name="document")
+        form#formUpload(name="upload",method="post",action="/upload", enctype="multipart/form-data")
+          input#btnUpload(type="file", name = "filetoupload")
         br
+
 
     #submit
         a(href="http://localhost:3000/explore") Cancelar sin loguear

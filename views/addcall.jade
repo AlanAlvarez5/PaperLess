@@ -4,39 +4,65 @@ html
     head
       link(href='/stylesheets/addcall.css', rel='stylesheet')
       title Nueva Convocatoria
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+      script.
+            $(document).ready(function() {
+            $("#btnAddInput").click(function() {
+                $("ol").append("<li> item </li>");
+                });
+            });
+  
     body
     #header
       a(href="http://localhost:3000/explore")
         img(src="/images/logo.png")
-      
       h1= title
+      
      
     #Intructions
       
       h1 Ingresa los datos
+      
+    #squarebox
+      #fill
+        form#formAddCol(name="addcall",method="post",action="/addcall",required)
+          
+          #mail
+            p Título
+            input#inputTitle(type="text",placeholder="Movilidad ", name="title",required)
+          
+          #password
+            p Institución
+            input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution",required)
+          
+          #date
+            p Fecha límite
+            input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date",required)
+          
+          #description
+            p Descripción
+            input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description",required)
 
-    #fill
-      form#formAddCol(name="addcall",method="post",action="/addcall",required)
-        
-        #mail
-          p Título
-          input#inputTitle(type="text",placeholder="Movilidad ", name="title",required)
-        
-        #password
-          p Institución
-          input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution",required)
-        
-        #date
-          p Fecha límite
-          input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date",required)
-        
-        #description
-          p Descripción
-          input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description",required)
+          #reqdoc
+            a(href="http://localhost:3000/reqdoc") Documentación requerida
+          
+          #submit
+            button#btnSubmit(type="submit") Aceptar
+            a(href="http://localhost:3000/explore") Cancelar
+    
+      #doccontainer
+        p Nombre del archivo
+        ol
+          li List item 1
+          li List item 2
+          li List item 3
 
-        #reqdoc
-          a(href="http://localhost:3000/reqdoc") Documentación requerida
+        #buttons
+          #addinput
+            //-form#formAddInput(name="reqdocadd",method="post",action="/reqdocadd")
+            button#btnAddInput(type="addinput") +
         
-        #submit
-          button#btnSubmit(type="submit") Aceptar
-          a(href="http://localhost:3000/explore") Cancelar
+          #deleteinput
+            //-form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
+            button#btnDeleteInput(type="deleteinput") -
+
