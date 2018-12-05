@@ -50,7 +50,7 @@ router.get('/edituser', function(req, res) {
 router.get('/addcall', function(req, res){
   res.render('addcall', {title:'Crea una nueva convocatoria'});
 });
-
+// Required Documentation
 router.get('/reqdoc', function(req, res) {
     var db = req.db;
     var collection = db.get('reqdocspace');
@@ -61,6 +61,7 @@ router.get('/reqdoc', function(req, res) {
     });
 });
 
+// Calificar documentación
 router.get('/caldoc', function(req, res) {
     var db = req.db;
     //var db2 = req.db;
