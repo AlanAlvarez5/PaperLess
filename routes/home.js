@@ -1,5 +1,39 @@
 var express = require('express');
+var http = require('http');
+var formidable = require('formidable');
 var router = express.Router();
+var fs = require('fs');
+
+
+router.get('/upload', function(req, res, next) {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write('<form action="/upload" method="post" enctype="multipart/form-data">');
+        res.write('<input type="file" name="filetoupload"><br>');
+        res.write('<input type="submit">');
+        res.write('</form>');
+        return res.end();
+});
+
+router.post('/upload', function (req, res){
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+      var oldpath = files.filetoupload.path;
+      var newpath = '/Users/diego/GoogleDrive/Developer/Software_Development/PaperLess/files/' + files.filetoupload.name;
+      fs.rename(oldpath, newpath, function (err) {
+        if (err) throw err;
+        res.write('File uploaded and moved!');
+        res.end();
+      });
+
+    });
+});
+
+router.get('/fileuploaded', function (req, res){
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('file sended');
+    return res.end();
+
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -89,29 +123,7 @@ router.post('/login', function (req, res){
     var collection = db.get('users');
 
     res.redirect("/explore");
-    //console.log('Alerta');
-    // Find the user
-    /*
-    var listed = collection.findOne({
-          email: lgemail },
-        { password: lgpassword 
-        }, function(err, doc){
-            if (err) {
-                // If it failed, return error
-                res.send("There was a problem adding the information to the database.");
-            }
-            else {
-                // And forward to success page
-                res.redirect("addcall");
-            }
-        }
-    );
-    */
-/*
-    if (listed) {
-        res.body.alert("Alerta");   
-    }
-    */
+    
 });
 
 router.post('/addcall', function(req, res) {
@@ -277,7 +289,6 @@ router.post('/adduser', function (req, res){
 router.post('/edituser', function (req, res){
     // Set our internal DB variable
     var db = req.db;
-
     // Get our form values. These rely on the "name" attributes
     var name = req.body.name;
     var last_name = req.body.lastname;
@@ -309,7 +320,5 @@ router.post('/edituser', function (req, res){
         }
     });
 });
-
-
 
 module.exports = router;

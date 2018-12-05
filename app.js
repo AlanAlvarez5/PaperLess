@@ -10,6 +10,8 @@ var db = monk('localhost:27017/paperLessDB');
 
 var homeRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
+//var uploadRouter = require('./routes/upload');
+
 
 var app = express();
 
@@ -30,6 +32,8 @@ app.use(function(req,res,next){
 
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
+//app.use('/upload', uploadRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
