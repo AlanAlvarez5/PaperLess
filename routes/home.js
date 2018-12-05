@@ -24,7 +24,6 @@ router.post('/upload', function (req, res){
         res.write('File uploaded and moved!');
         res.end();
       });
-
     });
 });
 
