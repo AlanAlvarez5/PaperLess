@@ -19,7 +19,7 @@ html
       form#formData(name="adduser",method="post",action="/adduser",required)
         #name
           p Nombre
-          input#inputName(type="text", placeholder="Antonio", name="name",required)
+          input#inputName(type="text", placeholder="Antonio", name="name", pattern="[A-Za-z ]{0,20}" title="Solo se permiten letras", required)
         #lastname
           p Apellido
           input#inputLastname(type="text", placeholder="Alvarez", name="lastname",required)
@@ -28,7 +28,7 @@ html
           input#inputUsername(type="text", placeholder="antonio98", name="username",required)
         #email
           p E-mail
-          input#inputemail(type="mail",  placeholder="ejemplo@mail.com", name="email",required)
+          input#inputemail(type="email",  placeholder="ejemplo@mail.com", name="email",required)
         #password
           p Contraseña
           input#inputPassword(type="password",  placeholder="Nueva contraseña", name="password",required)
@@ -39,7 +39,7 @@ html
           input#inputInstitution(type="text",  placeholder="Universidad de Guanajuato", name="institution",required)
         #rol
           p Tipo de Usuario
-          input#inputAdmin(type="checkbox", name="rol",required)
+          input#inputAdmin(type="checkbox", name="rol")
           Thing#a Administrador
           br
         #submit

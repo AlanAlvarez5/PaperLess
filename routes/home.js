@@ -3,6 +3,7 @@ var http = require('http');
 var formidable = require('formidable');
 var router = express.Router();
 var fs = require('fs');
+var validator = require('validator');
 
 
 router.get('/upload', function(req, res, next) {
@@ -231,6 +232,12 @@ router.post('/adduser', function (req, res){
     // Set our collection
     var collection = db.get('users');
 
+    if (validator.isEmail(email)==false){
+        // Si hay error
+        document.getElementById("inputemail").style.borderColor = "red";
+    }else{
+        // Si está todo bien
+        document.getElementById("inputemail").style.borderColor = "green";
     // Submit to the DB
     collection.insert({
         "name" : name,
@@ -244,12 +251,12 @@ router.post('/adduser', function (req, res){
         if (err) {
             // If it failed, return error
             res.send("There was a problem adding the information to the database.");
-        }
-        else {
+        }else {
             // And forward to success page
             res.redirect("explore");
         }
-    });
+        });
+    }
 });
 
 router.post('/adduser', function (req, res){
