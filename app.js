@@ -6,7 +6,21 @@ var logger = require('morgan');
 
 var mongo = require('mongodb');
 var monk = require('monk');
+
+var MongoClient = require('mongodb').MongoClient;
+
+var ruri = "mongodb://SYSTEM:123@cluster0-shard-00-00-qmkm8.mongodb.net:27017,cluster0-shard-00-01-qmkm8.mongodb.net:27017,cluster0-shard-00-02-qmkm8.mongodb.net:27017/PaperLessDB?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
+MongoClient.connect(ruri, function(err, client) {
+  var rdb = client.db("PaperLessDB");
+  
+  console.log("db object points to the database : "+ rdb.databaseName);
+  const collection = client.db("PaperLessDB").collection("calls");
+  collection.insertOne({name: "Robert", phone: "7-07-00-00"});
+  client.close();
+});
+
 var db = monk('localhost:27017/paperLessDB');
+//var db = monk('mongodb+srv://SYSTEM:123@cluster0-qmkm8.mongodb.net:27017/PaperLessDB?retryWrites=true');
 
 var homeRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
@@ -25,10 +39,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use(function(req,res,next){
   req.db = db;
   next();
 });
+
 
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
