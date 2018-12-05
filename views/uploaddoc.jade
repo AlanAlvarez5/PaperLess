@@ -33,7 +33,9 @@ html
         p Nombre del archivo
             input#inputdocument(type="text",placeholder="Documento", name="document")
             form#formUpload(name="upload",method="post",action="/upload", enctype="multipart/form-data")
-                input#btnUpload(type="file", name = "filetoupload") +
+              input#btnUpload(type="file", name = "filetoupload")
+              button#btnSubmit(type="submit") Aceptar
+              
         br
 
     #submit

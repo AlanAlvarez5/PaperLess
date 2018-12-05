@@ -6,12 +6,15 @@ var fs = require('fs');
 
 
 router.get('/upload', function(req, res, next) {
+  res.render('uploaddoc', { title: 'Uploaddoc' });
+    /*
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write('<form action="/upload" method="post" enctype="multipart/form-data">');
         res.write('<input type="file" name="filetoupload"><br>');
         res.write('<input type="submit">');
         res.write('</form>');
         return res.end();
+        */
 });
 
 router.post('/upload', function (req, res){
