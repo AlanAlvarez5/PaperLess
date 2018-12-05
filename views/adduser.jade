@@ -22,10 +22,10 @@ html
           input#inputName(type="text", placeholder="Antonio", name="name", pattern="[A-Za-z ]{0,20}" title="Solo se permiten letras", required)
         #lastname
           p Apellido
-          input#inputLastname(type="text", placeholder="Alvarez", name="lastname",required)
+          input#inputLastname(type="text", placeholder="Alvarez", name="lastname", pattern="[A-Za-z ]{0,20}" title="Solo se permiten letras", required)
         #username
           p Username
-          input#inputUsername(type="text", placeholder="antonio98", name="username",required)
+          input#inputUsername(type="text", placeholder="antonio98", name="username",pattern="{5,20}" title="Minimo 5 Carácteres",required)
         #email
           p E-mail
           input#inputemail(type="email",  placeholder="ejemplo@mail.com", name="email",required)
