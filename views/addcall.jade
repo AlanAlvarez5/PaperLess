@@ -3,6 +3,7 @@ link(rel='icon', type='image/png', href='/images/logo.png')
 html
     head
       link(href='/stylesheets/addcall.css', rel='stylesheet')
+      script(src='/scripts/addcall.js')
       title Nueva Convocatoria
       //-script(src='/routes/addremove.js')
       script(src='/routes/addnew.js')
@@ -18,13 +19,6 @@ html
       
         h1 Ingresa los datos
       
-      //-#counter
-        .texto
-          label#display 0
-        .group-buttons
-          a#incrementa.button-link(href='#') Aumenta
-          a#disminuye.button-link(href='#') Disminuye
-
       #squarebox
         #fill
           form#formAddCol(name="addcall",method="post",action="/addcall",required)
@@ -46,7 +40,11 @@ html
             input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}", title="Solo se permiten letras",required)
 
             #reqdoc
+<<<<<<< HEAD
               a(href="http://localhost:3000/reqdoc") Documentación requerida
+=======
+                a(href="http://localhost:3000/reqdoc") Documentación requerida
+>>>>>>> acf71cfb0bb3d40b259b18041338117cd2f266bc
           
             #submit
               button#btnSubmit(type="submit") Aceptar
@@ -54,18 +52,7 @@ html
     
         #doccontainer
           p Nombre del archivo
-
-          button.add_field_button(type='button') Agregar casilla
-          button.remove_field_button(type='button') Eliminar casilla
-          .input_fields_wrap
-            input.field-long(type='text', name='answer[]')
-
-          //-#buttons
-            #addinput
-              form#formAddInput(name="addcalladd", method="post", action="/addcalladd")
-                button#btnAddInput(type="addinput") +
-        
-            #deleteinput
-              //-form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
-              button#btnDeleteInput(type="deleteinput") -
-        
+          button#add(type='button', onclick="agregar(this)") Agregar casilla
+          button#remove(type='button', onclick="remove(this)") Eliminar casilla
+          #documents
+            input(type='text', class='document', placeholder='Nombre de documento') 
