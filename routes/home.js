@@ -4,6 +4,9 @@ var formidable = require('formidable');
 var router = express.Router();
 var fs = require('fs');
 var validator = require('validator');
+var url = require('url');
+var adr = 'http://localhost:3000/descr?5bf6420e2a77082018d8e2b6';
+var q = url.parse(adr, true);
 
 
 router.get('/upload', function(req, res, next) {
@@ -160,6 +163,22 @@ router.post('/addcall', function(req, res) {
       }
   });
 });
+
+
+router.get('/descr/:id', function(req, res) {
+    var db = req.db;
+    var collection = db.get('calls');
+    collection.find({},{},function(e,docs){
+        res.render('descr', {
+            "calls" : docs
+        });
+    });
+  });
+
+  
+
+
+
 
 // Con acción de boton +, añade nuevos textbox
 router.post('/reqdocadd', function(req, res) {
