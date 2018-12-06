@@ -75,20 +75,22 @@ router.post('/addcall', function(req, res) {
     // Set our collection
     var collection = db.get('calls');
   
-    var docName = doc+num_doc;
+    
     var docArray = new Array;
+    var mongoAray = "[";
 
     for (i=0; i<num_doc;i++){
-        docArray.push(docName);
+        var docName = "doc"+i; // Genera el name de cada input
+        var inputText = req.body[docName];
+        docArray.push(inputText);
     }
-
+    console.log(docArray);
     // Submit to the DB
     collection.insert({
         "title" : coltitle,
         "institution" : institution,
         "limited_date" : limitdate,
         "description" : description,
-        "documents": docArray
     }, function (err, doc) {
         if (err) {
             // If it failed, return error
