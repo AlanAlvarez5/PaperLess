@@ -45,7 +45,8 @@ html
     
         #doccontainer
           h3 Documentos a solicitar
-          button#add(type='button', onclick="agregar(this)") Agregar casilla
-          button#remove(type='button', onclick="remove(this)") Eliminar casilla
+          input#numElements(hidden, type="text", value="1", name="numElements")
+          button#add(type='button', onclick="agregar(this)") +
+          button#remove(type='button', onclick="remove(this)") -
           input(name='doc1', type='text', class='document', placeholder='Nombre de documento', form='formAddCol') 
           #documents

@@ -5,7 +5,7 @@ function agregar(id) {
     var elements = document.getElementsByClassName("document");
     num = elements.length;
     document.getElementById("numElements").value = num; // Actualiza el valor de la cuenta de elementos
-    alert(document.getElementById("numElements").value)
+    //alert(document.getElementById("numElements").value)
     // Crea un id para cada input con el id de doc+numero
     element.innerHTML += ("<input name='doc"+num+"' type='text' class='document' placeholder='Nombre de documento' form='addcall'></input>");
 };
