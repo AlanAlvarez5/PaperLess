@@ -6,7 +6,7 @@ html
       script(src='/scripts/addcall.js')
       title Nueva Convocatoria
       //-script(src='/routes/addremove.js')
-      script(src='/routes/addnew.js')
+      //-script(src='/routes/addnew.js')
   
     body
       #header
@@ -39,7 +39,7 @@ html
             p Descripción
             input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}", title="Solo se permiten letras",required)
 
-            #reqdoc
+            //-#reqdoc
                 a(href="http://localhost:3000/reqdoc") Documentación requerida
           
             #submit
@@ -48,7 +48,8 @@ html
     
         #doccontainer
           p Nombre del archivo
-          button#add(type='button', onclick="agregar(this)") Agregar casilla
-          button#remove(type='button', onclick="remove(this)") Eliminar casilla
+          #buttons
+            button#add(type='button', onclick="agregar(this)") +
+            button#remove(type='button', onclick="remove(this)") -
           #documents
             input(type='text', class='document', placeholder='Nombre de documento') 
