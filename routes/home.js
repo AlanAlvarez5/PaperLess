@@ -4,6 +4,7 @@ var formidable = require('formidable');
 var router = express.Router();
 var fs = require('fs');
 var validator = require('validator');
+var url = require('url');
 
 var MongoClient = require('mongodb').MongoClient;
 var uri = "mongodb://SYSTEM:123@cluster0-shard-00-00-qmkm8.mongodb.net:27017,cluster0-shard-00-01-qmkm8.mongodb.net:27017,cluster0-shard-00-02-qmkm8.mongodb.net:27017/PaperLessDB?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
@@ -103,6 +104,27 @@ router.get('/explore', function(req, res) {
       res.render('explore', {
           "calls" : docs
       });
+  });
+});
+
+router.get('/description:id', function(req, res) {
+    //res.writeHead(200, {'Content-Type': 'text/html'});
+    var url1 = req.protocol;
+    var url2 = req.get('host');
+    var url3 = req.originalUrl;
+    //var lid = req.query;
+    //res.write(url1);
+    //res.write(url1);
+    //var url_parts = url.parse(request.url, true);
+    //var query = url_parts.query;
+    //res.write(ulr2);
+    var query = url3.substring(12);
+    var db = req.db;
+    var collection = db.get('calls');
+    collection.find({_id: query},{},function(e,docs){
+        res.render('explore', {
+            "calls" : docs
+    });
   });
 });
 
