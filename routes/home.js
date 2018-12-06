@@ -59,6 +59,50 @@ router.get('/edituser', function(req, res) {
 router.get('/addcall', function(req, res){
   res.render('addcall', {title:'Crea una nueva convocatoria'});
 });
+
+router.post('/addcall', function(req, res) {
+
+    // Set our internal DB variable
+    var db = req.db;
+  
+    // Get our form values. These rely on the "name" attributes
+    var coltitle = req.body.title;
+    var institution = req.body.institution;
+    var limitdate = req.body.limited_date;
+    var description = req.body.description;
+    var num_doc = req.body.numElements;
+  
+    // Set our collection
+    var collection = db.get('calls');
+  
+    var docName = doc+num_doc;
+    var docArray = new Array;
+
+    for (i=0; i<num_doc;i++){
+        docArray.push(docName);
+    }
+
+    // Submit to the DB
+    collection.insert({
+        "title" : coltitle,
+        "institution" : institution,
+        "limited_date" : limitdate,
+        "description" : description,
+        "documents": docArray
+    }, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // And forward to success page
+            res.redirect("explore");
+        }
+    });
+  });
+  
+
+
 /*
 // Required Documentation
 router.get('/reqdoc', function(req, res) {
@@ -77,7 +121,7 @@ router.get('/caldoc', function(req, res) {
     //var db2 = req.db;
     var collection1 = db.get('calls');
     var collection2 = db.get('users');
-    
+
     collection1.find({},{},function(e,docs){
         res.render('caldoc', {
             "calls" : docs
@@ -122,7 +166,7 @@ router.get('/description:id', function(req, res) {
     var db = req.db;
     var collection = db.get('calls');
     collection.find({_id: query},{},function(e,docs){
-        res.render('descr', {
+        res.render('description', {
             "calls" : docs
     });
   });
@@ -130,7 +174,7 @@ router.get('/description:id', function(req, res) {
 
 router.get('/uploaddoc', function(req, res) {
     res.render('uploaddoc', {title:'Sube tus archivos'});
-    
+
     var db = req.db;
     var collection = db.get('calls');
     collection.find({},{},function(e,docs){
@@ -153,54 +197,21 @@ router.post('/login', function (req, res){
     var collection = db.get('users');
 
     res.redirect("/explore");
-    
-});
 
-router.post('/addcall', function(req, res) {
-
-  // Set our internal DB variable
-  var db = req.db;
-
-  // Get our form values. These rely on the "name" attributes
-  var coltitle = req.body.title;
-  var institution = req.body.institution;
-  var limitdate = req.body.limited_date;
-  var description = req.body.description;
-  var num_doc = req.body
-
-  // Set our collection
-  var collection = db.get('calls');
-
-  // Submit to the DB
-  collection.insert({
-      "title" : coltitle,
-      "institution" : institution,
-      "limited_date" : limitdate,
-      "description" : description
-  }, function (err, doc) {
-      if (err) {
-          // If it failed, return error
-          res.send("There was a problem adding the information to the database.");
-      }
-      else {
-          // And forward to success page
-          res.redirect("explore");
-      }
-  });
 });
 
 
-router.get('/descr/:id', function(req, res) {
+router.get('/description/:id', function(req, res) {
     var db = req.db;
     var collection = db.get('calls');
     collection.find({},{},function(e,docs){
-        res.render('descr', {
+        res.render('description', {
             "calls" : docs
         });
     });
   });
 
-  
+
 
 
 
@@ -241,17 +252,17 @@ router.post('/addcallcadd', function(req, res) {
 router.post('/reqdocdelete', function(req, res) {
     // Set our internal DB variable
     var db = req.db;
-  
+
     // Get our form values. These rely on the "name" attributes
     var trued = " ";
-  
+
     // Set our collection
     var collection = db.get('reqdocspace');
-  
+
     // Submit to the DB
     collection.remove(
         { "space": " " }, { justOne: true}/*, function (err, doc) {
-        
+
         if (err) {
             // If it failed, return error
             res.send("There was a problem adding the information to the database.");
@@ -259,7 +270,7 @@ router.post('/reqdocdelete', function(req, res) {
         else {
             // And forward to success page
             res.redirect("reqdoc");
-        } 
+        }
     }
     */
     );

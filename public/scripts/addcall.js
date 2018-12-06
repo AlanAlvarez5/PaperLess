@@ -1,11 +1,17 @@
+var num;
+
 function agregar(id) {
     var element = document.getElementById("documents");
-    element.innerHTML += "<input type='text', class='document', placeholder='Nombre de documento'></input>";
+    var elements = document.getElementsByClassName("document");
+    num = elements.length;
+    document.getElementById("numElements").value = num;
+    // Crea un id para cada input con el id de doc+numero
+    element.innerHTML += ("<input name='doc"+num+" type='text', class='document', placeholder='Nombre de documento', form='addcall'></input>");
 };
 
 function remove(id) {
     var elements = document.getElementsByClassName("document");
-    var num = elements.length;
+    num = elements.length;
     //alert("hay " + num + " elementos");
     elements[num-1].remove(elements[num-1]);
 };

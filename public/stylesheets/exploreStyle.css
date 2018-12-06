@@ -2,10 +2,10 @@ body {
     padding: 0px;
     margin: 0;
 }
-  
-a 
+
+a
 {
-    color: rgba(230, 21, 6, 0);
+    color: rgb(230, 21, 6);
 }
 
 img
@@ -22,7 +22,7 @@ img
     width: 100%;
     height: 5em;
     background-image: linear-gradient(to left, #00CBFF, #25516b);
-    
+
 }
 
 
@@ -86,7 +86,7 @@ img
     margin: 0;
 }
 
-#descr 
+#descr
 {
     display: flex;
     flex-wrap: nowrap;
@@ -110,8 +110,10 @@ img
     margin-top: 10pt;
 }
 
-#header a
+#logout
 {
     color: blue;
     text-align: right;
+    padding-left:70%;
+    margin-top: 20pt;
 }
