@@ -45,8 +45,9 @@ img
     align-items: center;
     width: 100% ;
     margin-bottom: 0;
+    width: 400pt;
+    margin:0;
 }
-
 #call
 {
     height: 7em;
@@ -116,4 +117,139 @@ img
     text-align: right;
     padding-left:70%;
     margin-top: 20pt;
+}
+
+#userdrop
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 100pt;
+    padding-top: 30pt;
+}
+
+#userdrop .search_categories{
+    font-size: 13px;
+    padding: 10px 8px 10px 14px;
+    background: rgb(207, 206, 206);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    width: 200pt;
+  }
+  
+  #userdrop .search_categories .select{
+    width:200pt;
+    background-position:80% center;
+  }
+  
+  #userdrop .search_categories .select select{
+    background: transparent;
+    line-height: 1;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    width: 200pt;
+    position: relative;
+    z-index: 10;
+    font-size: 1em;
+  }
+
+#docdrop
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 100pt;
+    padding-top: 30pt;
+}
+
+#docdrop .search_categories{
+    font-size: 13px;
+    padding: 10px 8px 10px 14px;
+    background: rgb(207, 206, 206);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    width: 200pt;
+  }
+  
+  #docdrop.search_categories .select{
+    width:200pt;
+    background-position:80% center;
+  }
+  
+  #docdrop .search_categories .select select{
+    background: transparent;
+    line-height: 1;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    width: 200pt;
+    position: relative;
+    z-index: 10;
+    font-size: 1em;
+  }
+
+
+#docimage
+{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    padding-top:  100pt;
+
+}
+
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
 }

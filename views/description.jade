@@ -2,7 +2,10 @@ doctype html
 link(rel='icon', type='image/png', href='/images/logo.png')
 html
     head
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      style.
       link(href='/stylesheets/descrStyle.css', rel='stylesheet')
+      script(src='/scripts/description.js')
       title Descripción
     body
     #header
@@ -21,5 +24,56 @@ html
             h3 #{call.title}
             p #{call.institution}
             p límite: #{call.limited_date}
-    
-    #descr
+
+    #userdrop
+      .search_categories
+        .select
+          select#search_categories(name='search_categories')
+            option(value='1', selected='selected') Jonathan Ortega
+            |           
+            option(value='2') Jose Mar
+            |           
+            option(value='3') Alan Alvarez
+            |           
+            option(value='4') Luis Salgado
+            |           
+            option(value='5') Diego Rosas
+            |           
+            option(value='6') Christian Vergas
+
+    #docdrop
+      .search_categories
+        .select
+          select#search_categories(name='search_categories', onchange='update(this)')
+            option(value='1', selected='selected') CURP
+            |           
+            option(value='2') Acta de nacimiento
+            |           
+            option(value='3') Comprobante de domicilio
+            |           
+            option(value='4') Identificación
+
+    #docimage
+      div(style='text-align:center')
+        h2 Tabbed Image Gallery
+        |   
+        p Click on the images below:
+      // The four columns
+      .row
+        .column
+          img(src='/images/curp.png', alt='Curp', style='width:auto', onclick='myFunction(this);')
+        |   
+        .column
+          img(src='/images/acta.jpg', alt='Acta', style='width:auto', onclick='myFunction(this);')
+        |   
+        .column
+          img(src='/images/ine.png', alt='INE', style='width:auto', onclick='myFunction(this);')
+        |   
+        .column
+          img(src='/images/recibo.jpg', alt='recibe', style='width:auto', onclick='myFunction(this);')
+      .container
+        span.closebtn(onclick="this.parentElement.style.display='none'") &times;
+        |   
+        img#expandedImg(style='width:100% height:200%')
+        |   
+        #imgtext
