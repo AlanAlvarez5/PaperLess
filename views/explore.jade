@@ -17,10 +17,9 @@ html
       a(href="http://localhost:3000/addcall") Agregar Convocatoria
     
     #callcontainer
-      each call, i in calls 
-        #call
-          a(href='http://localhost:3000/descr/#{call._id}')
+      each call, i in calls
+        a(href="http://localhost:3000/description#{call._id}") 
+          #call
             h3 #{call.title}
             p #{call.institution}
             p límite: #{call.limited_date}
-          
