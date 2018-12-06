@@ -58,6 +58,7 @@ router.get('/edituser', function(req, res) {
 router.get('/addcall', function(req, res){
   res.render('addcall', {title:'Crea una nueva convocatoria'});
 });
+/*
 // Required Documentation
 router.get('/reqdoc', function(req, res) {
     var db = req.db;
@@ -68,7 +69,7 @@ router.get('/reqdoc', function(req, res) {
         });
     });
 });
-
+*/
 // Calificar documentación
 router.get('/caldoc', function(req, res) {
     var db = req.db;
@@ -106,8 +107,8 @@ router.get('/explore', function(req, res) {
 });
 
 router.get('/uploaddoc', function(req, res) {
-    //res.render('uploaddoc', {title:'Sube tus archivos'});
-
+    res.render('uploaddoc', {title:'Sube tus archivos'});
+    
     var db = req.db;
     var collection = db.get('calls');
     collection.find({},{},function(e,docs){
@@ -143,6 +144,7 @@ router.post('/addcall', function(req, res) {
   var institution = req.body.institution;
   var limitdate = req.body.limited_date;
   var description = req.body.description;
+  var num_doc = req.body
 
   // Set our collection
   var collection = db.get('calls');
@@ -166,19 +168,23 @@ router.post('/addcall', function(req, res) {
 });
 
 // Con acción de boton +, añade nuevos textbox
-router.post('/reqdocadd', function(req, res) {
+router.post('/addcallcadd', function(req, res) {
   // Set our internal DB variable
   var db = req.db;
 
   // Get our form values. These rely on the "name" attributes
-  var space = " ";
+  var count = 0;
+  var plus = 1;
 
   // Set our collection
-  var collection = db.get('reqdocspace');
+  var collection = db.get('calls');
 
+  count = db.num_doc + 1;
+
+  /*
   // Submit to the DB
   collection.insert({
-      "space" : space,
+      "num_doc" : count,
   }, function (err, doc) {
       if (err) {
           // If it failed, return error
@@ -189,6 +195,8 @@ router.post('/reqdocadd', function(req, res) {
           res.redirect("reqdoc");
       }
   });
+  */
+
 });
 
 // Con acción de boton +, añade nuevos textbox

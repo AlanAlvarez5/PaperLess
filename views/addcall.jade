@@ -4,29 +4,46 @@ html
     head
       link(href='/stylesheets/addcall.css', rel='stylesheet')
       title Nueva Convocatoria
-      script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-      script.
-            $(document).ready(function() {
-            $("#btnAddInput").click(function() {
-                $("ol").append("<li> item </li>");
-                });
-            });
+      script(src='/routes/addremove.js')
+
+      //-script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+      //-script.
+          var i = 0;
+          $('#incrementa').click(function(){  
+            if (i < 20 ) { /*Cambiar el >= 0 por < 10 si quieres limitar el incremento*/
+                i++;
+              } else if (i = i++) {
+                i = 0;
+              }
+              document.getElementById("display").innerHTML = i;
+          })
+          $('#disminuye').click(function(){ 
+            if (i > 0) {--i;} 
+              document.getElementById("display").innerHTML = i;
+          })
   
     body
-    #header
-      a(href="http://localhost:3000/explore")
-        img(src="/images/logo.png")
-      h1= title
+      #header
+        a(href="http://localhost:3000/explore")
+          img(src="images/logo.png")
+        h1= title
       
      
-    #Intructions
+      #Intructions
       
-      h1 Ingresa los datos
-      
-    #squarebox
-      #fill
-        form#formAddCol(name="addcall",method="post",action="/addcall",required)
+        h1 Ingresa los datos
+
+      .texto
+        label#display 0
+      .group-buttons
+        a#incrementa.button-link(href='#') Aumenta
+        a#disminuye.button-link(href='#') Disminuye
+
+      #squarebox
+        #fill
+          form#formAddCol(name="addcall",method="post",action="/addcall",required)
           
+<<<<<<< HEAD
           #mail
             p Título
             input#inputTitle(type="text",placeholder="Movilidad ", name="title", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras", required)
@@ -34,35 +51,56 @@ html
           #password
             p Institución
             input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato",pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras", name="institution",required)
+=======
+            #mail
+              p Título
+              input#inputTitle(type="text",placeholder="Movilidad ", name="title",required)
           
-          #date
-            p Fecha límite
-            input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date",required)
+            #password
+              p Institución
+              input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution",required)
+>>>>>>> 88f730a22fe4aee2df3d8475a7de066358b5e8b7
           
+            #date
+              p Fecha límite
+              input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date",required)
+          
+<<<<<<< HEAD
           #description
             p Descripción
             input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras",required)
+=======
+            #description
+              p Descripción
+              input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description",required)
+>>>>>>> 88f730a22fe4aee2df3d8475a7de066358b5e8b7
 
-          #reqdoc
-            a(href="http://localhost:3000/reqdoc") Documentación requerida
+            #reqdoc
+              a(href="http://localhost:3000/reqdoc") Documentación requerida
           
-          #submit
-            button#btnSubmit(type="submit") Aceptar
-            a(href="http://localhost:3000/explore") Cancelar
+            #submit
+              button#btnSubmit(type="submit") Aceptar
+              a(href="http://localhost:3000/explore") Cancelar
     
-      #doccontainer
-        p Nombre del archivo
-        ol
-          li List item 1
-          li List item 2
-          li List item 3
-
-        #buttons
-          #addinput
-            //-form#formAddInput(name="reqdocadd",method="post",action="/reqdocadd")
-            button#btnAddInput(type="addinput") +
+        #doccontainer
+          p Nombre del archivo
+          p Numero de: #{i}
+          ol
+            li List item 1
+            li List item 2
+            li List item 3
+          //-.texto
+            label#display 0
+          //-.group-buttons
+            a#incrementa.button-link(href='#') Aumenta
+            a#disminuye.button-link(href='#') Disminuye
         
-          #deleteinput
-            //-form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
-            button#btnDeleteInput(type="deleteinput") -
-
+          #buttons
+            #addinput
+              form#formAddInput(name="addcalladd", method="post", action="/addcalladd")
+                button#btnAddInput(type="addinput") +
+        
+            #deleteinput
+              //-form#formDeleteInput(name="reqdocdelete",method="post",action="/reqdocdelete")
+              button#btnDeleteInput(type="deleteinput") -
+        
