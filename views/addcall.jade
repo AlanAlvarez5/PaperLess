@@ -48,7 +48,8 @@ html
     
         #doccontainer
           p Nombre del archivo
+          input#numElements(hidden, type="text", value="undefined", name="numElements")
           button#add(type='button', onclick="agregar(this)") Agregar casilla
           button#remove(type='button', onclick="remove(this)") Eliminar casilla
-          #documents
-            input(type='text', class='document', placeholder='Nombre de documento') 
+          #documents(onchange="updateCounter(this)")
+            input(type='text', class='document', placeholder='Nombre de documento', form='addcall') 
