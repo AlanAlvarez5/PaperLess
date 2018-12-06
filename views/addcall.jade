@@ -4,23 +4,8 @@ html
     head
       link(href='/stylesheets/addcall.css', rel='stylesheet')
       title Nueva Convocatoria
-      script(src='/routes/addremove.js')
-
-      //-script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-      //-script.
-          var i = 0;
-          $('#incrementa').click(function(){  
-            if (i < 20 ) { /*Cambiar el >= 0 por < 10 si quieres limitar el incremento*/
-                i++;
-              } else if (i = i++) {
-                i = 0;
-              }
-              document.getElementById("display").innerHTML = i;
-          })
-          $('#disminuye').click(function(){ 
-            if (i > 0) {--i;} 
-              document.getElementById("display").innerHTML = i;
-          })
+      //-script(src='/routes/addremove.js')
+      script(src='/routes/addnew.js')
   
     body
       #header
@@ -32,12 +17,13 @@ html
       #Intructions
       
         h1 Ingresa los datos
-
-      .texto
-        label#display 0
-      .group-buttons
-        a#incrementa.button-link(href='#') Aumenta
-        a#disminuye.button-link(href='#') Disminuye
+      
+      //-#counter
+        .texto
+          label#display 0
+        .group-buttons
+          a#incrementa.button-link(href='#') Aumenta
+          a#disminuye.button-link(href='#') Disminuye
 
       #squarebox
         #fill
@@ -73,13 +59,13 @@ html
             li List item 1
             li List item 2
             li List item 3
-          //-.texto
-            label#display 0
-          //-.group-buttons
-            a#incrementa.button-link(href='#') Aumenta
-            a#disminuye.button-link(href='#') Disminuye
         
-          #buttons
+          button.add_field_button(type='button') Add Field
+          button.remove_field_button(type='button') Remove Field
+          .input_fields_wrap
+            input.field-long(type='text', name='answer[]')
+
+          //-#buttons
             #addinput
               form#formAddInput(name="addcalladd", method="post", action="/addcalladd")
                 button#btnAddInput(type="addinput") +
