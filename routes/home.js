@@ -5,6 +5,10 @@ var router = express.Router();
 var fs = require('fs');
 var validator = require('validator');
 
+var MongoClient = require('mongodb').MongoClient;
+var uri = "mongodb://SYSTEM:123@cluster0-shard-00-00-qmkm8.mongodb.net:27017,cluster0-shard-00-01-qmkm8.mongodb.net:27017,cluster0-shard-00-02-qmkm8.mongodb.net:27017/PaperLessDB?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
+//MongoClient.connect(uri);
+
 
 router.get('/upload', function(req, res, next) {
   res.render('uploaddoc', { title: 'Uploaddoc' });
@@ -242,10 +246,10 @@ router.post('/adduser', function (req, res){
 
     if (validator.isEmail(email)==false){
         // Si hay error
-        document.getElementById("inputemail").style.borderColor = "red";
+       // document.getElementById("inputemail").style.borderColor = "red";
     }else{
         // Si está todo bien
-        document.getElementById("inputemail").style.borderColor = "green";
+        //document.getElementById("inputemail").style.borderColor = "green";
     // Submit to the DB
     collection.insert({
         "name" : name,
