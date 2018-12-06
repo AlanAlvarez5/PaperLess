@@ -3,6 +3,7 @@ link(rel='icon', type='image/png', href='/images/logo.png')
 html
     head
       link(href='/stylesheets/uploaddocStyle.css', rel='stylesheet')
+      script(src='/scripts/sendeddocs.js')
       title Sube tus archivos
     body
     #header
@@ -30,16 +31,28 @@ html
             br
 
     #doccontainer
-        p Nombre del archivo
+        p CURP 
+            //-input#inputdocument(type="text",placeholder="Documento", name="document")
+        form#formUpload(name="upload",method="post",action="/upload", enctype="multipart/form-data")
+          input#btnUpload(type="file", name = "filetoupload")
+        br
+        p Acta de Nacimiento
+            //-input#inputdocument(type="text",placeholder="Documento", name="document")
+        form#formUpload(name="upload",method="post",action="/upload", enctype="multipart/form-data")
+          input#btnUpload(type="file", name = "filetoupload")
+        br
+        p Comprobante de Domicilio
+            //-input#inputdocument(type="text",placeholder="Documento", name="document")
+        form#formUpload(name="upload",method="post",action="/upload", enctype="multipart/form-data")
+          input#btnUpload(type="file", name = "filetoupload")
+        br
+        p Identificación
             //-input#inputdocument(type="text",placeholder="Documento", name="document")
         form#formUpload(name="upload",method="post",action="/upload", enctype="multipart/form-data")
           input#btnUpload(type="file", name = "filetoupload")
         br
 
-
     #submit
-        a(href="http://localhost:3000/explore") Cancelar sin loguear
-        button#btnSubmit(type="submit") Aceptar
-        #cancelarl
-            a(href="http://localhost:3000/explore") Cancelar logueado
-
+        a(href="http://localhost:3000/explore") Cancelar 
+        button#btnSubmit(onclick="docsenviados()" ) Aceptar
+      

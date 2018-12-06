@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    
+
 }
 
 #header img
@@ -19,18 +19,30 @@ body {
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
-    
+
     width: 100%;
     height: 500pt;
-    
+
 }
 
-#header a
+#signin
 {
+    text-align: left;
+    width: 80pt;
     color: blue;
-    text-align: right;
-    margin-right: 10%;
-    margin-top: 20pt;
+    margin-left: 90%;
+    margin-top: 10pt;
+    font-size: 16pt;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#login
+{
+    text-align: left;
+    margin-left: 90%;
+    padding-top: 10pt;
+    width: 80pt;
+    color: blue;
     font-size: 16pt;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -41,7 +53,7 @@ body {
     flex-direction: row;
     align-self: center;
     padding-top:  100pt;
-    
+
 }
 
 #Home h1
@@ -74,7 +86,7 @@ body {
 }
 
 
-#button .actionBtn5 
+#button .actionBtn5
 {
     overflow:hidden;
     position:relative;
@@ -91,17 +103,17 @@ body {
     line-height:40px;
     color:#25516bd2;
     font-size:14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-decoration:none;
     text-transform:uppercase;
 }
 
-#button .actionBtn5 span 
+#button .actionBtn5 span
 {
     display:block;
 }
 
-#button .actionBtn5 .hover:after 
+#button .actionBtn5 .hover:after
 {
     position:absolute;
     top:0;
@@ -125,7 +137,7 @@ body {
     -moz-transition:all .35s, opacity .4s;
 }
 
-#button .actionBtn5 .hover .txt 
+#button .actionBtn5 .hover .txt
 {
    z-index:10;
    position:relative;
@@ -135,12 +147,12 @@ body {
    -moz-transition:color .35s;
 }
 
-#button .actionBtn5:hover .hover .txt 
+#button .actionBtn5:hover .hover .txt
 {
     color:#fff;
 }
 
-#button .actionBtn5 .hover:hover:after 
+#button .actionBtn5 .hover:hover:after
 {
     opacity:1;
     left:3%;
@@ -157,26 +169,26 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
-    align-content: center;   
+    align-content: center;
     flex-direction: row;
     padding-top: 20pt;
 
 }
 
 
-#eco h1 
+#eco h1
 {
     width: 120pt;
     padding-left: 130pt;
 }
 
-#fast h1 
+#fast h1
 {
     width: 120pt;
     padding-left: 130pt;
 }
 
-#org h1 
+#org h1
 {
     width: 120pt;
     padding-left: 130pt;
@@ -191,7 +203,7 @@ body {
     margin-top: 20pt;
     margin-left: 88pt;
     box-shadow: #000000a9 0pt 3pt 30pt;
-   
+
 }
 #eco .actionImg2 {
     position:relative;
@@ -250,7 +262,7 @@ body {
     margin-top: 20pt;
     margin-left: 88pt;
     box-shadow: #000000a9 0pt 3pt 30pt;
-   
+
 }
 #fast .actionImg2 {
     position:relative;
@@ -311,7 +323,7 @@ body {
     margin-top: 20pt;
     margin-left: 88pt;
     box-shadow: #000000a9 0pt 3pt 30pt;
-   
+
 }
 #org .actionImg2 {
     position:relative;
@@ -428,7 +440,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: center;   
+    align-content: center;
     padding-top: 20pt;
     width: 100%;
     height: auto;
@@ -443,7 +455,7 @@ body {
      box-sizing:border-box;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
-    
+
 }
 #Paperdescr .actionTxtType9 {
     padding:50px 40px;
@@ -616,10 +628,10 @@ body {
     flex-direction: row;
     width: 100%;
     height: 300pt;
-   
+
 }
 
-#wixtempla 
+#wixtempla
 {
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -627,8 +639,8 @@ body {
 
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;  
-    
+    flex-wrap: wrap;
+
 
 }
 
@@ -672,7 +684,7 @@ body {
 #empresa .box {
     border:1px solid #333;
     width: 350pt;
-    height: 250pt; 
+    height: 250pt;
     box-sizing:border-box;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
@@ -683,15 +695,15 @@ body {
 }
 #Group .actionImg6 img {
     width: 350pt;
-    height: 250pt; 
-    
+    height: 250pt;
+
 }
 #empresa .actionImg6 .social_bg {
     position:absolute;
     bottom:-300px;
     left:50px;
     width: 350pt;
-    height: 250pt; 
+    height: 250pt;
     background-color:rgba(0,0,0,0.5);
     transform:skew(-55deg);
     -webkit-transform:skew(-55deg);
@@ -793,10 +805,10 @@ body {
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
-    width: 100%; 
-    
+    width: 100%;
+
     flex-wrap: wrap;
-    align-content: center;   
+    align-content: center;
     padding-top: 20pt;
     width: 100%;
     height: 100pt;
@@ -821,4 +833,3 @@ body {
     height: 41pt;
     padding-top: 30pt;
 }
-
