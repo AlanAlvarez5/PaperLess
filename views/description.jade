@@ -3,6 +3,7 @@ link(rel='icon', type='image/png', href='/images/logo.png')
 html
     head
       link(href='/stylesheets/descrStyle.css', rel='stylesheet')
+      script(src='/scripts/sendeddocs.js')
       title Descripción
     body
     #header
@@ -23,3 +24,5 @@ html
             p límite: #{call.limited_date}
     
     #descr
+    #adddocs
+      button#uploaddoc(onclick="uploaddoc()" ) Subir Documentos
