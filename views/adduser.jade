@@ -18,25 +18,25 @@ html
       
       form#formData(name="adduser",method="post",action="/adduser",required)
         #name
-          p Nombre
-          input#inputName(type="text", placeholder="Antonio", name="name", pattern="[A-Za-z ]{0,20}" title="Solo se permiten letras", required)
+          p Nombre(s)
+          input#inputName(type="text", placeholder="Antonio", name="name", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras", required)
         #lastname
-          p Apellido
-          input#inputLastname(type="text", placeholder="Alvarez", name="lastname",required)
+          p Apellido(s)
+          input#inputLastname(type="text", placeholder="Alvarez", name="lastname", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras", required)
         #username
           p Username
-          input#inputUsername(type="text", placeholder="antonio98", name="username",required)
+          input#inputUsername(type="text", placeholder="antonio98", name="username",pattern="[A-Za-z0-9\ñ]{5,20}" title="Mínimo 5 letras o números",required)
         #email
           p E-mail
           input#inputemail(type="email",  placeholder="ejemplo@mail.com", name="email",required)
         #password
           p Contraseña
-          input#inputPassword(type="password",  placeholder="Nueva contraseña", name="password",required)
+          input#inputPassword(type="password",  placeholder="Nueva contraseña", name="password", pattern="[A-Za-z0-9\-\_\ñ]{8,20}" title="Mínimo 8 letras o números",required)
           p Confirmar contraseña
-          input#inputRepeatPassword(type="password",  placeholder="Confirmar contraseña", name="repeatpassword",required)
+          input#inputRepeatPassword(type="password",  placeholder="Confirmar contraseña",pattern="[A-Za-z0-9\-\_\ñ]{8,20}" title="Mínimo 8 letras o números", name="repeatpassword",required)
         #institution
           p Institución
-          input#inputInstitution(type="text",  placeholder="Universidad de Guanajuato", name="institution",required)
+          input#inputInstitution(type="text",  placeholder="Universidad de Guanajuato", name="institution", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras",required)
         #rol
           p Tipo de Usuario
           input#inputAdmin(type="checkbox", name="rol")

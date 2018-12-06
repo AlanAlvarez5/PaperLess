@@ -29,6 +29,15 @@ html
         #fill
           form#formAddCol(name="addcall",method="post",action="/addcall",required)
           
+<<<<<<< HEAD
+          #mail
+            p Título
+            input#inputTitle(type="text",placeholder="Movilidad ", name="title", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras", required)
+          
+          #password
+            p Institución
+            input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato",pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras", name="institution",required)
+=======
             #mail
               p Título
               input#inputTitle(type="text",placeholder="Movilidad ", name="title",required)
@@ -36,14 +45,21 @@ html
             #password
               p Institución
               input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution",required)
+>>>>>>> 88f730a22fe4aee2df3d8475a7de066358b5e8b7
           
             #date
               p Fecha límite
               input#inputLimitDate(type="date", placeholder="dd-mm-yyyy", name="limited_date",required)
           
+<<<<<<< HEAD
+          #description
+            p Descripción
+            input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras",required)
+=======
             #description
               p Descripción
               input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description",required)
+>>>>>>> 88f730a22fe4aee2df3d8475a7de066358b5e8b7
 
             #reqdoc
               a(href="http://localhost:3000/reqdoc") Documentación requerida

@@ -239,11 +239,15 @@ router.post('/adduser', function (req, res){
     var username = req.body.username;
     var email = req.body.email;
     var password = req.body.password;
+    var repeatpassword = req.body.repeatpassword;
     var institution = req.body.institution;
     var is_admin = req.body.rol;
     // Set our collection
     var collection = db.get('users');
 
+    if (repeatpassword != password){
+        res.send("La contraseña no es igual");
+    }
     if (validator.isEmail(email)==false){
         // Si hay error
        // document.getElementById("inputemail").style.borderColor = "red";
