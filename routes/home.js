@@ -70,12 +70,12 @@ router.post('/addcall', function(req, res) {
     var institution = req.body.institution;
     var limitdate = req.body.limited_date;
     var description = req.body.description;
-    var num_doc = req.body.numElements.value;
+    //var num_doc = req.body.numElements.value;
   
     // Set our collection
     var collection = db.get('calls');
   
-    
+    /*
     var docArray = new Array;
 
     for (i=0; i<Number(num_doc); i++){
@@ -93,15 +93,15 @@ router.post('/addcall', function(req, res) {
     
     mongoAray.push(req.body.doc1);
     mongoAray.push(req.body.doc2);
-
+*/
     //console.log(docArray);
     // Submit to the DB
     collection.insert({
         "title" : coltitle,
         "institution" : institution,
         "limited_date" : limitdate,
-        "description" : description,
-        "documents" : mongoAray
+        "description" : description
+       // "documents" : mongoAray
     }, function (err, doc) {
         if (err) {
             // If it failed, return error
