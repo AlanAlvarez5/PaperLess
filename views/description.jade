@@ -2,24 +2,24 @@ doctype html
 link(rel='icon', type='image/png', href='/images/logo.png')
 html
     head
-      link(href='/stylesheets/exploreStyle.css', rel='stylesheet')
-      title Explore
+      link(href='/stylesheets/descrStyle.css', rel='stylesheet')
+      title Descripción
     body
     #header
     
-      a#home(href="http://localhost:3000/explore")
+      a(href="http://localhost:3000/explore")
         img(src="/images/logo.png")
-      h1 Explore 
+      h1 Descripción
       a#logout(href="http://localhost:3000/") Log out
       
-    #descr
-      p Convocatorias existentes.
+    #conv
       a(href="http://localhost:3000/addcall") Agregar Convocatoria
     
     #callcontainer
       each call, i in calls
-        a(href="http://localhost:3000/description#{call._id}") 
           #call
             h3 #{call.title}
             p #{call.institution}
             p límite: #{call.limited_date}
+    
+    #descr
