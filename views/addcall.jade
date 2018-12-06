@@ -38,34 +38,16 @@ html
           #description
             p Descripción
             input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}", title="Solo se permiten letras",required)
-
-<<<<<<< HEAD
-            //-#reqdoc
-=======
-            #reqdoc
-<<<<<<< HEAD
-              a(href="http://localhost:3000/reqdoc") Documentación requerida
-=======
->>>>>>> 67b1267fcfb0be7e9d2995726478dded8390d548
-                a(href="http://localhost:3000/reqdoc") Documentación requerida
->>>>>>> acf71cfb0bb3d40b259b18041338117cd2f266bc
-          
+ 
             #submit
               button#btnSubmit(type="submit") Aceptar
               a(href="http://localhost:3000/explore") Cancelar
     
         #doccontainer
           p Nombre del archivo
-<<<<<<< HEAD
           #buttons
+            input#numElements(hidden, type="text", value="undefined", name="numElements")
             button#add(type='button', onclick="agregar(this)") +
             button#remove(type='button', onclick="remove(this)") -
-          #documents
-            input(type='text', class='document', placeholder='Nombre de documento') 
-=======
-          input#numElements(hidden, type="text", value="undefined", name="numElements")
-          button#add(type='button', onclick="agregar(this)") Agregar casilla
-          button#remove(type='button', onclick="remove(this)") Eliminar casilla
           #documents(onchange="updateCounter(this)")
             input(type='text', class='document', placeholder='Nombre de documento', form='addcall') 
->>>>>>> 67b1267fcfb0be7e9d2995726478dded8390d548
