@@ -43,9 +43,9 @@ html
               a(href="http://localhost:3000/explore") Cancelar
     
         #doccontainer
-          p Nombre del archivo
+          h3 Documentos a solicitar
           input#numElements(hidden, type="text", value="1", name="numElements")
-          button#add(type='button', onclick="agregar(this)") Agregar casilla
-          button#remove(type='button', onclick="remove(this)") Eliminar casilla
+          button#add(type='button', onclick="agregar(this)") +
+          button#remove(type='button', onclick="remove(this)") -
           input(name='doc1', type='text', class='document', placeholder='Nombre de documento', form='formAddCol') 
           #documents
