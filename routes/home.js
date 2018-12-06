@@ -122,7 +122,7 @@ router.get('/description:id', function(req, res) {
     var db = req.db;
     var collection = db.get('calls');
     collection.find({_id: query},{},function(e,docs){
-        res.render('explore', {
+        res.render('descr', {
             "calls" : docs
     });
   });
