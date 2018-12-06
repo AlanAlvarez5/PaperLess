@@ -29,11 +29,11 @@ html
           
           #mail
             p Título
-            input#inputTitle(type="text",placeholder="Movilidad ", name="title",required)
+            input#inputTitle(type="text",placeholder="Movilidad ", name="title", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras", required)
           
           #password
             p Institución
-            input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato", name="institution",required)
+            input#inputInstitution(type="text", placeholder="Ej. Universidad de Guanajuato",pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras", name="institution",required)
           
           #date
             p Fecha límite
@@ -41,7 +41,7 @@ html
           
           #description
             p Descripción
-            input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description",required)
+            input#inputDescription(type="text", cols=40, rows=5, placeholder="Description", name="description", pattern="[A-Za-z]+[A-Za-z\ñ ]{0,20}" title="Solo se permiten letras",required)
 
           #reqdoc
             a(href="http://localhost:3000/reqdoc") Documentación requerida

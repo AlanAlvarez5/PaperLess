@@ -17,11 +17,11 @@ html
           
           #mail
             p Correo 
-            input#inputTitle(type="mail", name="email", required)
+            input#inputTitle(type="email", name="email", required)
           
           #password
             p Contraseña
-            input#inputInstitution(type="password", name="password", required, maxlength=6 )
+            input#inputInstitution(type="password", name="password",pattern="[A-Za-z0-9\-\_\ñ]{8,20}" title="Minimo 8 letras o números", required)
           
           #submit
             a(href="http://localhost:3000") Cancelar
